@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+.logo img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f4f6f8;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #003366;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.navbar nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+/* SLIDER */
+.slider {
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+}
+
+/* Each collage slide */
+.collage-slide {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Active collage */
+.collage-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Collage images */
+.collage-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* SECTIONS */
+.section {
+  padding: 60px 10%;
+  text-align: center;
+}
+
+.section.light {
+  background: white;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  color: #003366;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  width: 260px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* GALLERY */
+.gallery {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gallery img {
+  width: 250px;
+  border-radius: 10px;
+}
+/* NEWS CARD */
+.news-card {
+  display: flex;
+  gap: 25px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* IMAGE */
+.news-card img {
+  width: 40%;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.news-content {
+  padding: 25px;
+  text-align: left;
+}
+
+/* TAG */
+.news-tag {
+  display: inline-block;
+  background: #003366;
+  color: white;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+/* TITLE */
+.news-content h3 {
+  color: #003366;
+  margin-bottom: 8px;
+}
+
+/* DATE */
+.news-date {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+/* LIST */
+.news-content ul {
+  margin: 15px 0;
+  padding-left: 20px;
+}
+
+.news-content li {
+  margin-bottom: 6px;
+}
+#events {
+  padding: 40px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+#events h2 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #003366;
+}
+
+.events-container {
+  display: flex; /* horizontal layout */
+  justify-content: center; /* center the row */
+  gap: 20px; /* space between videos */
+  flex-wrap: wrap; /* wrap on smaller screens */
+}
+
+.event {
+  width: 250px; /* fixed width for each video block */
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.event video {
+  width: 100%; /* fit the block */
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.news-button:hover {
+  background: #004080;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .news-card {
+    flex-direction: column;
+  }
+
+  .news-card img {
+    width: 100%;
+    height: 220px;
+  }
+}
+
+/* maps */
+/* MAP */
+.map-container {
+  margin-top: 30px;
+  width: 100%;
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* FOOTER */
+footer {
+  background: #003366;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .collage-slide {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
