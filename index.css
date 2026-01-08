@@ -1,4 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 .logo img {
   width: 45px;
   height: 45px;
@@ -98,32 +110,29 @@ body {
   background: #ffffff;
 }
 
-@media screen and (max-width: 768px) {
-  /* Hide nav links initially */
+@media (max-width: 768px) {
   .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    background-color: #1e3a8a;
     display: none;
     flex-direction: column;
-    width: 100%;
-    background-color: #1e3a8a; /* matches navbar */
-    position: absolute;
-    top: 70px; /* below navbar */
-    left: 0;
+    align-items: center;
     padding: 10px 0;
-    border-top: 1px solid #fff;
   }
 
-  /* Stack links vertically and center */
   .nav-links a {
-    margin: 10px 0;
+    width: 100%;
     text-align: center;
+    padding: 12px 0;
   }
-
-  /* Show hamburger only on mobile */
-  .hamburger {
-    display: block;
-    font-size: 28px;
-    color: #fff;
-    cursor: pointer;
+}
+@media (max-width: 768px) {
+  .nav-links.active {
+    display: flex;
   }
 }
 
