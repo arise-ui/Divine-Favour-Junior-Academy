@@ -313,5 +313,17 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+      function toggleNav() {
+        const nav = document.getElementById("navLinks");
+
+        if (nav.style.display === "flex") {
+          nav.style.display = "none"; // hide links
+        } else {
+          nav.style.display = "flex"; // show links
+          nav.style.flexDirection = "column"; // stack vertically
+        }
+      }
+    </script>
   </body>
 </html>
