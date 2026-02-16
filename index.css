@@ -670,20 +670,21 @@ body {
   padding: 0;
   background-color: #f5f7fa; /* light neutral background */
   color: #1f2933;
-}
-/* ================= ADMISSIONS SECTION ================= */
+} /* ADMISSIONS SECTION BASE */
 .admissions-section {
+  background-color: #f5f7fa;
   padding: 70px 20px;
   text-align: center;
-  background-color: #f5f7fa;
 }
 
+/* Section Heading */
 .admissions-section h2 {
-  font-size: 28px;
   color: #1e3a8a;
+  font-size: 28px;
   margin-bottom: 20px;
 }
 
+/* Intro Paragraph */
 .admissions-section p {
   font-size: 15px;
   color: #4b5563;
@@ -691,14 +692,14 @@ body {
   line-height: 1.6;
 }
 
-/* Card around the form */
+/* Card Container for Form */
 .admissions-card {
-  max-width: 700px;
-  margin: auto;
-  background: #fff;
-  padding: 20px;
+  background: #ffffff;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  max-width: 600px;
+  margin: auto;
+  padding: 30px 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -707,40 +708,59 @@ body {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsive Iframe Container */
-.iframe-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 125%; /* Adjust ratio for form height */
-  height: 0;
-  overflow: hidden;
-  border-radius: 16px;
+/* Form Styling */
+.admissions-form {
+  display: grid;
+  gap: 15px;
+  text-align: left;
 }
 
-.iframe-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
+/* Labels */
+.admissions-form label {
+  font-weight: 500;
+  color: #1f2933;
 }
 
-/* MOBILE RESPONSIVE */
-@media (max-width: 768px) {
-  .admissions-card {
-    padding: 15px;
-  }
-  .iframe-container {
-    padding-bottom: 150%;
-  }
+/* Inputs and Selects */
+.admissions-form input,
+.admissions-form select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.admissions-form input:focus,
+.admissions-form select:focus {
+  outline: none;
+  border-color: #1e3a8a;
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+}
+
+/* Submit Button */
+.submit-btn {
+  background-color: #1e3a8a;
+  color: #ffffff;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.submit-btn:hover {
+  background-color: #2546c7;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .admissions-section {
-    padding: 40px 20px;
-    margin: 40px 15px;
+  .admissions-card {
+    padding: 25px 15px;
   }
 }
 

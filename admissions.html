@@ -1,22 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admissions - [Your School Name]</title>
+    <title>Admissions</title>
+
     <link rel="stylesheet" href="index.css" />
-    <!-- Your main CSS -->
+
     <script
       src="https://kit.fontawesome.com/a076d05399.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
-    <!-- ================= NAVBAR ================= -->
+    <!-- NAVBAR -->
     <header class="navbar-section">
       <nav class="navbar-container">
         <a href="index.html" class="navbar-logo">
-          <img src="images/logo.png" alt="School Logo" />
+          <img src="images/your-logo.png" alt="School Logo" />
         </a>
         <ul class="navbar-links">
           <li><a href="index.html#About" class="nav-link">About</a></li>
@@ -32,28 +33,45 @@
       </nav>
     </header>
 
-    <!-- ================= ADMISSIONS SECTION ================= -->
+    <!-- ADMISSIONS SECTION -->
     <section class="admissions-section">
       <h2>Admissions</h2>
       <p>
         We welcome applications from parents seeking quality education for their
-        children. Please fill in the form below to register interest or apply.
+        children. Please fill in the form below to register.
       </p>
 
       <div class="admissions-card">
-        <!-- Responsive Google Form Embed -->
-        <div class="iframe-container">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSdJETHWveJIeLGr94Te2LzVPyJs27x3VHbJ2rWNsn_VOlv77A/viewform?embedded=true"
-            width="640"
-            height="1291"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
-            >Loading…</iframe
-          >
-        </div>
+        <form class="admissions-form">
+          <label for="studentName">Child's Name:</label>
+          <input type="text" id="studentName" name="studentName" required />
+
+          <label for="parentName">Parent/Guardian Name:</label>
+          <input type="text" id="parentName" name="parentName" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="grade">Grade Applying For:</label>
+          <select id="grade" name="grade" required>
+            <option value="">Select Grade</option>
+            <option value="PP1">PP1</option>
+            <option value="PP2">PP2</option>
+            <option value="Grade1">Grade 1</option>
+            <option value="Grade2">Grade 2</option>
+            <option value="Grade3">Grade 3</option>
+            <option value="Grade4">Grade 4</option>
+            <option value="Grade5">Grade 5</option>
+            <option value="Grade6">Grade 6</option>
+            <option value="Grade7">Grade 7</option>
+            <option value="Grade8">Grade 8</option>
+            <option value="Grade9">Grade 9</option>
+          </select>
+
+          <button type="submit" class="submit-btn">Submit Application</button>
+        </form>
       </div>
     </section>
+    <script src="script.js"></script>
   </body>
 </html>
