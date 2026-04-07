@@ -8,9 +8,541 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ===== RESET & BASE ===== */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #f4f6f8;
+        color: #1f2933;
+      }
+
+      /* ===== NAVBAR ===== */
+      .navbar-section {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        background: rgba(30, 58, 138, 0.95);
+        backdrop-filter: blur(8px);
+        padding: 10px 0;
+        transition: 0.3s ease;
+      }
+
+      .navbar-container {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+      }
+
+      .navbar-logo img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #ffffff;
+      }
+
+      .navbar-links {
+        display: flex;
+        gap: 26px;
+        list-style: none;
+      }
+
+      .navbar-links a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 500;
+        transition: 0.3s ease;
+      }
+
+      .navbar-links a:hover,
+      .navbar-links a.active {
+        color: #9b06d6;
+        border-bottom: 2px solid #9b06d6;
+      }
+
+      .navbar-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+      }
+
+      .navbar-toggle span {
+        width: 25px;
+        height: 3px;
+        background: #ffffff;
+        display: block;
+      }
+
+      /* Mobile nav */
+      @media (max-width: 768px) {
+        .navbar-toggle {
+          display: flex;
+        }
+
+        .navbar-links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background-color: #1e3a8a;
+          flex-direction: column;
+          align-items: center;
+          padding: 10px 0;
+          gap: 0;
+        }
+
+        .navbar-links.open {
+          display: flex;
+        }
+
+        .navbar-links li {
+          width: 100%;
+          text-align: center;
+        }
+
+        .navbar-links a {
+          display: block;
+          width: 100%;
+          padding: 12px 0;
+        }
+      }
+
+      /* ===== HERO ===== */
+      .hero-about-section {
+        background: url("images/hero-bg.jpg") center/cover no-repeat;
+        position: relative;
+        padding: 140px 20px 100px;
+        text-align: center;
+        color: #ffffff;
+      }
+
+      .hero-about-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+      }
+
+      .hero-about-content {
+        position: relative;
+        max-width: 700px;
+        margin: auto;
+        z-index: 2;
+      }
+
+      .hero-about-section h1 {
+        font-size: 42px;
+        font-weight: 800;
+        margin-bottom: 14px;
+        color: #ffffff;
+      }
+
+      .hero-about-section p {
+        font-size: 18px;
+        margin-bottom: 24px;
+        color: #f3f4f6;
+      }
+
+      .btn-primary {
+        background-color: #1e3a8a;
+        color: #ffffff;
+        padding: 12px 28px;
+        border-radius: 8px;
+        font-size: 15px;
+        text-decoration: none;
+        transition: 0.3s ease;
+        display: inline-block;
+      }
+
+      .btn-primary:hover {
+        background-color: #2546c7;
+      }
+
+      /* ===== SHARED SECTION STYLES ===== */
+      .about-section,
+      .academics-section,
+      .gallery-section {
+        background-color: #f5f7fa;
+        padding: 70px 20px;
+        text-align: center;
+      }
+
+      .about-section h2,
+      .academics-section h2,
+      .gallery-section h2 {
+        color: #1e3a8a;
+        margin-bottom: 40px;
+        font-size: 28px;
+      }
+
+      /* ===== CARD GRIDS ===== */
+      .about-wrapper,
+      .academics-wrapper,
+      .gallery-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1100px;
+        margin: auto;
+      }
+
+      .about-card,
+      .academics-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        padding: 30px 20px;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .about-card:hover,
+      .academics-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .about-card i,
+      .academics-card i {
+        font-size: 32px;
+        color: #1e3a8a;
+        margin-bottom: 15px;
+        display: block;
+      }
+
+      .about-card h3,
+      .academics-card h3 {
+        margin-bottom: 12px;
+        font-size: 20px;
+        color: #1f2933;
+      }
+
+      .about-card p,
+      .academics-card p {
+        font-size: 14px;
+        color: #4b5563;
+      }
+
+      /* ===== GALLERY ===== */
+      .gallery-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .gallery-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .gallery-card img {
+        width: 100%;
+        display: block;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .caption {
+        padding: 12px 16px;
+        font-size: 14px;
+        color: #1f2933;
+      }
+
+      /* ===== NEWS SECTION ===== */
+      .section {
+        padding: 60px 10%;
+        text-align: center;
+      }
+
+      .section.light {
+        background: white;
+      }
+
+      .section h2 {
+        margin-bottom: 20px;
+        color: #003366;
+      }
+
+      .news-card {
+        display: flex;
+        gap: 25px;
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: left;
+      }
+
+      .news-card img {
+        width: 40%;
+        object-fit: cover;
+      }
+
+      .news-content {
+        padding: 25px;
+      }
+
+      .news-tag {
+        display: inline-block;
+        background: #003366;
+        color: white;
+        padding: 4px 12px;
+        font-size: 0.8rem;
+        border-radius: 20px;
+        margin-bottom: 10px;
+      }
+
+      .news-content h3 {
+        color: #003366;
+        margin-bottom: 8px;
+      }
+
+      .news-date {
+        font-size: 0.85rem;
+        color: #777;
+        margin-bottom: 15px;
+      }
+
+      .news-content ul {
+        margin: 15px 0;
+        padding-left: 20px;
+      }
+
+      .news-content li {
+        margin-bottom: 6px;
+      }
+
+      @media (max-width: 768px) {
+        .news-card {
+          flex-direction: column;
+        }
+        .news-card img {
+          width: 100%;
+          height: 220px;
+        }
+      }
+
+      /* ===== EVENTS ===== */
+      #events {
+        padding: 40px;
+        background-color: #f9f9f9;
+        text-align: center;
+      }
+
+      #events h2 {
+        margin-bottom: 30px;
+        font-size: 2rem;
+        color: #003366;
+      }
+
+      .events-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .event {
+        width: 250px;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .event h3 {
+        margin-bottom: 8px;
+        font-size: 16px;
+        color: #1e3a8a;
+      }
+
+      .event p {
+        margin-top: 8px;
+        font-size: 13px;
+        color: #4b5563;
+      }
+
+      .event video {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        display: block;
+      }
+
+      /* ===== DOWNLOADS ===== */
+      #downloads ul {
+        list-style: none;
+      }
+
+      #downloads a {
+        color: #1e3a8a;
+        text-decoration: underline;
+        font-size: 15px;
+      }
+
+      /* ===== CONTACT ===== */
+      .contact-section {
+        background-color: #f5f7fa;
+        padding: 80px 20px;
+      }
+
+      .contact-wrapper {
+        max-width: 1100px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+
+      .contact-card,
+      .map-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+      }
+
+      .contact-card {
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .contact-card h2 {
+        color: #1e3a8a;
+        margin-bottom: 25px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 12px 0;
+        color: #1f2933;
+        font-size: 14px;
+      }
+
+      .contact-item i {
+        color: #1e3a8a;
+        font-size: 16px;
+        flex-shrink: 0;
+      }
+
+      .contact-btn {
+        margin-top: 30px;
+        padding: 14px 28px;
+        background: #1e3a8a;
+        color: #ffffff;
+        border: none;
+        border-radius: 10px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .contact-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+      }
+
+      .trust-text {
+        margin-top: 18px;
+        font-size: 13px;
+        color: #6b7280;
+      }
+
+      .map-header {
+        padding: 20px 24px;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .map-header h3 {
+        font-size: 18px;
+        color: #1e3a8a;
+      }
+
+      .map-header p {
+        margin-top: 4px;
+        font-size: 13px;
+        color: #6b7280;
+      }
+
+      .map-header p i {
+        color: #1e3a8a;
+        margin-left: 6px;
+        font-size: 16px;
+      }
+
+      .map-container {
+        width: 100%;
+        height: 340px;
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        filter: saturate(1.05) contrast(1.05);
+      }
+
+      @media (max-width: 900px) {
+        .contact-wrapper {
+          grid-template-columns: 1fr;
+        }
+        .map-container {
+          height: 280px;
+        }
+      }
+
+      /* ===== FOOTER ===== */
+      footer {
+        background: #003366;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-size: 14px;
+      }
+    </style>
   </head>
   <body>
+    <!-- ===== NAVBAR ===== -->
     <header class="navbar-section">
       <nav class="navbar-container">
         <a href="#home" class="navbar-logo">
@@ -29,21 +561,21 @@
       </nav>
     </header>
 
-    <section id="About" class="hero-about-section">
+    <!-- ===== HERO ===== -->
+    <section id="home" class="hero-about-section">
       <div class="hero-about-content">
-        <!--  Welcome Text -->
         <h1>Welcome to Our School</h1>
         <p>
-          Your child’s future starts here — excellence, care, and holistic
+          Your child's future starts here — excellence, care, and holistic
           development in every class.
         </p>
         <a href="#AboutCards" class="btn-primary">Learn More About Us</a>
       </div>
     </section>
 
+    <!-- ===== WHAT WE OFFER ===== -->
     <section id="AboutCards" class="about-section">
       <h2>What We Offer</h2>
-
       <div class="about-wrapper">
         <div class="about-card">
           <i class="fas fa-child"></i>
@@ -53,16 +585,14 @@
             early learners.
           </p>
         </div>
-
         <div class="about-card">
           <i class="fas fa-school"></i>
           <h3>Primary</h3>
           <p>
             From Grade 1 through Grade 6, building strong foundations in
-            literacy & numeracy.
+            literacy &amp; numeracy.
           </p>
         </div>
-
         <div class="about-card">
           <i class="fas fa-user-graduate"></i>
           <h3>JSS</h3>
@@ -74,17 +604,15 @@
       </div>
     </section>
 
-    <!-- ABOUT US SECTION -->
+    <!-- ===== ABOUT US ===== -->
     <section id="About" class="about-section">
       <h2>About Us</h2>
-
       <div class="about-wrapper">
         <div class="about-card">
           <i class="fas fa-graduation-cap"></i>
           <h3>Our School Motto</h3>
-          <p>Divine Favour Junior Academy Endevour for excellence</p>
+          <p>Divine Favour Junior Academy — Endeavour for Excellence</p>
         </div>
-
         <div class="about-card">
           <i class="fas fa-school"></i>
           <h3>Our Mission</h3>
@@ -93,7 +621,6 @@
             and competent learners.
           </p>
         </div>
-
         <div class="about-card">
           <i class="fas fa-eye"></i>
           <h3>Our Vision</h3>
@@ -102,7 +629,6 @@
             child development.
           </p>
         </div>
-
         <div class="about-card">
           <i class="fas fa-heart"></i>
           <h3>Our Values</h3>
@@ -114,11 +640,9 @@
       </div>
     </section>
 
-    <!-- ACADEMICS -->
-    <section id="academics" class="academics-section">
+    <!-- ===== ACADEMICS ===== -->
+    <section id="Academics" class="academics-section">
       <h2>Academics</h2>
-      <a href="#About"></a>
-
       <div class="academics-wrapper">
         <div class="academics-card">
           <i class="fas fa-book-open"></i>
@@ -127,7 +651,6 @@
             Developing literacy skills in English and Kiswahili for all levels.
           </p>
         </div>
-
         <div class="academics-card">
           <i class="fas fa-flask"></i>
           <h3>Science</h3>
@@ -136,7 +659,6 @@
             foundations.
           </p>
         </div>
-
         <div class="academics-card">
           <i class="fas fa-calculator"></i>
           <h3>Mathematics</h3>
@@ -145,7 +667,6 @@
             secondary.
           </p>
         </div>
-
         <div class="academics-card">
           <i class="fas fa-paint-brush"></i>
           <h3>Creative Arts</h3>
@@ -156,37 +677,30 @@
       </div>
     </section>
 
-    <!-- NEWS -->
-    <section id="news" class="section">
-      <h2>News & Announcements</h2>
-
+    <!-- ===== NEWS ===== -->
+    <section id="News" class="section">
+      <h2>News &amp; Announcements</h2>
       <div class="news-card">
         <img src="images/adm.png" alt="Student Registration" />
-
         <div class="news-content">
           <span class="news-tag">Admissions</span>
           <h3>2026 Student Registration Ongoing</h3>
-
           <p class="news-date">Posted on: 22 December 2025</p>
-
           <p>
             Divine Favour Junior Academy invites parents and guardians to
             register learners for the 2026 academic year. Registration is open
             for Pre-school, Primary, and JSS levels.
           </p>
-
           <ul>
             <li>
               Entry interviews conducted through contact information provided.
             </li>
           </ul>
-
-          <!-- <a href="admissions.html" class="news-button">Register Now</a> -->
         </div>
       </div>
     </section>
 
-    <!-- EVENTS -->
+    <!-- ===== EVENTS ===== -->
     <section id="events">
       <h2>Events We've Had</h2>
       <div class="events-container">
@@ -197,7 +711,6 @@
           </video>
           <p>Description of event 1...</p>
         </div>
-
         <div class="event">
           <h3>Event 2</h3>
           <video controls>
@@ -205,7 +718,6 @@
           </video>
           <p>Description of event 2...</p>
         </div>
-
         <div class="event">
           <h3>Event 3</h3>
           <video controls>
@@ -216,18 +728,16 @@
       </div>
     </section>
 
-    <!-- GALLERY -->
-    <section class="gallery-section">
+    <!-- ===== GALLERY ===== -->
+    <section id="Gallery" class="gallery-section">
       <h2>Gallery</h2>
-
       <div class="gallery-wrapper">
         <div class="gallery-card">
-          <img src="images/juma.png" alt="School Activity 2" />
+          <img src="images/juma.png" alt="School Activity 1" />
           <p class="caption">County assembly visit</p>
         </div>
-
         <div class="gallery-card">
-          <img src="images/lady.png" alt="School Activity 3" />
+          <img src="images/lady.png" alt="School Activity 2" />
           <p class="caption">County assembly visit</p>
         </div>
         <div class="gallery-card">
@@ -237,7 +747,7 @@
       </div>
     </section>
 
-    <!-- DOWNLOADS -->
+    <!-- ===== DOWNLOADS ===== -->
     <section id="downloads" class="section light">
       <h2>Downloads</h2>
       <ul>
@@ -250,36 +760,30 @@
       </ul>
     </section>
 
-    <!-- CONTACT -->
-    <section class="contact-section">
+    <!-- ===== CONTACT ===== -->
+    <section id="Contact" class="contact-section">
       <div class="contact-wrapper">
-        <!-- Contact Card -->
         <div class="contact-card">
           <h2>Contact Us</h2>
-
           <div class="contact-item">
             <i class="fas fa-map-marker-alt"></i>
-            <span>P.O. B0X 75-80302, Taveta</span>
+            <span>P.O. BOX 75-80302, Taveta</span>
           </div>
-
           <div class="contact-item">
             <i class="fas fa-phone"></i>
             <span>+254740649712 / +254720750081</span>
           </div>
-
           <div class="contact-item">
             <i class="fas fa-envelope"></i>
             <span>divinefavourjunioracademy@gmail.com</span>
           </div>
-
           <div class="contact-item">
             <i class="fas fa-clock"></i>
             <span
-              >Monday – Friday, 7:00 AM – 5:00 PM , Saturday 7:00 AM – 2:00
-              PM</span
+              >Monday – Friday, 7:00 AM – 5:00 PM &nbsp;|&nbsp; Saturday 7:00 AM
+              – 2:00 PM</span
             >
           </div>
-
           <button class="contact-btn">Contact the School</button>
           <p class="trust-text">
             <strong
@@ -291,7 +795,6 @@
           </p>
         </div>
 
-        <!-- Map Card -->
         <div class="map-card">
           <div class="map-header">
             <h3>Our Location</h3>
@@ -300,14 +803,9 @@
               <i class="fas fa-clipboard"></i>
             </p>
           </div>
-
           <div class="map-container">
-            <!-- Keep your existing map iframe or JS map -->
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.879455389362!2d37.667981173744614!3d-3.3796229414948162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1839b7004b8d364f%3A0xc187f581b8f4c959!2sDivine%20Favour%20Junior%20Academy!5e0!3m2!1sen!2ske!4v1767821520892!5m2!1sen!2ske"
-              width="600"
-              height="450"
-              style="border: 0"
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
@@ -318,9 +816,7 @@
     </section>
 
     <footer>
-      <p>© Divine Favour Junior Academy | All Rights Reserved</p>
+      <p>&copy; Divine Favour Junior Academy | All Rights Reserved</p>
     </footer>
-
-    <script src="script.js"></script>
   </body>
 </html>
