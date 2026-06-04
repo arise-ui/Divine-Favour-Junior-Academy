@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us — Divine Favour Junior Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../index.css" />
+    <style>
+      .page-hero {
+        background: linear-gradient(135deg, var(--navy) 0%, #1a2e6e 100%);
+        padding: 100px 24px 80px;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        color: white;
+      }
+      .page-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(201, 168, 76, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(201, 168, 76, 0.05) 1px, transparent 1px);
+        background-size: 50px 50px;
+      }
+      .page-hero-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 700px;
+        margin: auto;
+      }
+      .breadcrumb {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 6px 18px;
+        border-radius: 50px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 24px;
+      }
+      .breadcrumb a {
+        color: var(--gold-light);
+        text-decoration: none;
+      }
+      .page-hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 50px;
+        font-weight: 800;
+        line-height: 1.15;
+        margin-bottom: 18px;
+      }
+      .page-hero h1 em {
+        color: var(--gold-light);
+        font-style: italic;
+      }
+      .page-hero p {
+        font-size: 17px;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.7;
+      }
+
+      /* Story section */
+      .story-section {
+        background: var(--white);
+        padding: 90px 24px;
+      }
+      .story-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+        align-items: center;
+        max-width: 1100px;
+        margin: 56px auto 0;
+      }
+      .story-image-area {
+        background: linear-gradient(135deg, var(--navy), #1a2e6e);
+        border-radius: 24px;
+        aspect-ratio: 4/3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .story-image-area i {
+        font-size: 80px;
+        color: rgba(255, 255, 255, 0.12);
+      }
+      .story-image-area img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        inset: 0;
+        border-radius: 24px;
+      }
+      .story-badge {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background: var(--gold);
+        color: var(--navy);
+        padding: 10px 20px;
+        border-radius: 50px;
+        font-size: 13px;
+        font-weight: 700;
+      }
+      .story-text p {
+        font-size: 15.5px;
+        color: var(--text-mid);
+        line-height: 1.85;
+        margin-bottom: 20px;
+      }
+      .story-text .pull-quote {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-size: 22px;
+        color: var(--navy);
+        line-height: 1.55;
+        border-left: 3px solid var(--gold);
+        padding-left: 20px;
+        margin: 28px 0;
+      }
+
+      /* Values grid */
+      .values-section {
+        background: var(--cream);
+        padding: 90px 24px;
+      }
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        max-width: 900px;
+        margin: 56px auto 0;
+      }
+      .value-card {
+        background: var(--white);
+        border-radius: 18px;
+        padding: 32px 28px;
+        box-shadow: var(--shadow-card);
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        border: 1px solid rgba(0, 0, 0, 0.04);
+        transition: 0.3s ease;
+      }
+      .value-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 40px rgba(15, 37, 84, 0.12);
+      }
+      .value-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
+        background: var(--navy);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .value-icon i {
+        font-size: 24px;
+        color: var(--gold);
+      }
+      .value-card h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 19px;
+        color: var(--text-dark);
+        margin-bottom: 8px;
+      }
+      .value-card p {
+        font-size: 14px;
+        color: var(--text-light);
+        line-height: 1.65;
+        margin: 0;
+      }
+
+      /* Staff section */
+      .staff-section {
+        background: var(--white);
+        padding: 90px 24px;
+      }
+      .staff-intro {
+        max-width: 700px;
+        margin: 0 auto 56px;
+        text-align: center;
+      }
+      .staff-intro p {
+        font-size: 15.5px;
+        color: var(--text-mid);
+        line-height: 1.8;
+      }
+      .staff-features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        max-width: 900px;
+        margin: auto;
+      }
+      .staff-feat {
+        text-align: center;
+        padding: 28px 20px;
+        border-radius: 16px;
+        background: var(--cream);
+        border: 1px solid rgba(0, 0, 0, 0.04);
+      }
+      .staff-feat i {
+        font-size: 32px;
+        color: var(--navy);
+        margin-bottom: 14px;
+        display: block;
+      }
+      .staff-feat h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 17px;
+        color: var(--text-dark);
+        margin-bottom: 8px;
+      }
+      .staff-feat p {
+        font-size: 13.5px;
+        color: var(--text-light);
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      /* Location section */
+      .location-section {
+        background: var(--navy);
+        color: white;
+        padding: 90px 24px;
+      }
+      .location-inner {
+        max-width: 1000px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+      }
+      .loc-text h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 34px;
+        margin-bottom: 18px;
+      }
+      .loc-text p {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.8;
+        margin-bottom: 16px;
+      }
+      .loc-facts {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 24px;
+      }
+      .loc-fact {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .loc-fact i {
+        color: var(--gold);
+        margin-top: 2px;
+        flex-shrink: 0;
+      }
+      .loc-map {
+        border-radius: 18px;
+        overflow: hidden;
+        height: 320px;
+      }
+      .loc-map iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+      }
+
+      @media (max-width: 768px) {
+        .page-hero h1 {
+          font-size: 34px;
+        }
+        .story-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+        .values-grid {
+          grid-template-columns: 1fr;
+        }
+        .staff-features {
+          grid-template-columns: 1fr;
+        }
+        .location-inner {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="wa-float" href="https://wa.me/254720750081"
+      ><i class="fab fa-whatsapp"></i> Chat with us</a
+    >
+
+    <header class="navbar-section" id="navbar">
+      <nav class="navbar-container">
+        <a href="../index.html" class="navbar-logo">
+          <img
+            src="../images/logo.png"
+            alt="Logo"
+            onerror="this.style.display = 'none'"
+          />
+          <div class="logo-text">
+            Divine Favour Junior Academy<span class="logo-sub"
+              >Endeavour for Excellence</span
+            >
+          </div>
+        </a>
+        <ul class="navbar-nav" id="mainNav">
+          <li>
+            <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="../index.html#Contact">Contact</a></li>
+        </ul>
+        <div class="navbar-toggle" id="navToggle">
+          <span></span><span></span><span></span>
+        </div>
+      </nav>
+    </header>
+
+    <div class="page-hero">
+      <div class="page-hero-inner">
+        <div class="breadcrumb">
+          <a href="../index.html">Home</a>
+          <i
+            class="fas fa-chevron-right"
+            style="font-size: 10px; opacity: 0.6"
+          ></i>
+          About Us
+        </div>
+        <h1>Who We <em>Are</em></h1>
+        <p>
+          A school built on faith, purpose, and an unshakeable belief in the
+          potential of every child. Learn the story behind Divine Favour Junior
+          Academy.
+        </p>
+      </div>
+    </div>
+
+    <!-- STORY -->
+    <section class="story-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Our Story</span>
+          <h2 class="section-title">
+            Built on <span class="highlight">Purpose &amp; Passion</span>
+          </h2>
+        </div>
+        <div class="story-grid">
+          <div class="story-image-area reveal-left">
+            <i class="fas fa-school"></i>
+            <div class="story-badge">
+              <i class="fas fa-map-marker-alt"></i> Taveta, Kenya
+            </div>
+          </div>
+          <div class="story-text reveal-right">
+            <p class="pull-quote">
+              "We started not just to run a school, but to build a place where
+              children are truly seen, valued, and invested in."
+            </p>
+            <p>
+              Divine Favour Junior Academy was founded with a clear and
+              heartfelt mission: to provide quality, holistic education to the
+              children of Taveta and the surrounding region. From humble
+              beginnings, we have grown into a nurturing institution that the
+              whole community is proud of.
+            </p>
+            <p>
+              We operate under the Competency-Based Curriculum (CBC), delivering
+              Pre-school, Primary, and Junior Secondary education to learners
+              from diverse backgrounds. Our classrooms are places of warmth,
+              curiosity, and high expectation.
+            </p>
+            <p>
+              Every child who enrols at Divine Favour Junior Academy becomes
+              part of our extended family — and we take that responsibility
+              seriously, every single day.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="values-section">
+      <div class="container">
+        <div class="section-header reveal" style="text-align: center">
+          <span class="section-label">What We Stand For</span>
+          <h2 class="section-title">
+            Our Core <span class="highlight">Values</span>
+          </h2>
+          <p class="section-subtitle" style="margin: 0 auto">
+            The principles that guide everything we do — in the classroom, in
+            the staffroom, and in the community.
+          </p>
+        </div>
+        <div class="values-grid">
+          <div class="value-card reveal-left">
+            <div class="value-icon"><i class="fas fa-balance-scale"></i></div>
+            <div>
+              <h3>Integrity</h3>
+              <p>
+                We model and expect honesty, transparency, and ethical conduct
+                from every member of our school community — staff, learners, and
+                parents alike.
+              </p>
+            </div>
+          </div>
+          <div class="value-card reveal-right">
+            <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+            <div>
+              <h3>Creativity</h3>
+              <p>
+                We celebrate curiosity and encourage our learners to think
+                boldly, solve problems creatively, and express themselves with
+                confidence.
+              </p>
+            </div>
+          </div>
+          <div class="value-card reveal-left">
+            <div class="value-icon"><i class="fas fa-fist-raised"></i></div>
+            <div>
+              <h3>Discipline</h3>
+              <p>
+                Self-discipline, responsibility, and respect for others are
+                foundational habits we nurture from the earliest grades through
+                consistent example and care.
+              </p>
+            </div>
+          </div>
+          <div class="value-card reveal-right">
+            <div class="value-icon"><i class="fas fa-heart"></i></div>
+            <div>
+              <h3>Love for Learning</h3>
+              <p>
+                We believe that a love for learning, once ignited, lasts a
+                lifetime. Our goal is to make every lesson engaging, relevant,
+                and joyful.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAFF -->
+    <section class="staff-section">
+      <div class="container">
+        <div class="section-header reveal" style="text-align: center">
+          <span class="section-label">Our Team</span>
+          <h2 class="section-title">
+            Dedicated <span class="highlight">Educators</span>
+          </h2>
+        </div>
+        <div class="staff-intro reveal">
+          <p>
+            Our teachers are the heartbeat of Divine Favour Junior Academy. They
+            are qualified, passionate professionals who go above and beyond
+            their job descriptions — building genuine relationships with
+            learners and their families, and bringing creativity and care to
+            every lesson.
+          </p>
+        </div>
+        <div class="staff-features">
+          <div class="staff-feat reveal">
+            <i class="fas fa-certificate"></i>
+            <h3>Qualified Teachers</h3>
+            <p>
+              All our staff hold recognised teaching qualifications and are
+              trained in CBC delivery methods.
+            </p>
+          </div>
+          <div class="staff-feat reveal" style="transition-delay: 0.1s">
+            <i class="fas fa-sync-alt"></i>
+            <h3>Continuous Training</h3>
+            <p>
+              We invest in regular professional development so our teachers
+              remain at the cutting edge of education.
+            </p>
+          </div>
+          <div class="staff-feat reveal" style="transition-delay: 0.2s">
+            <i class="fas fa-hand-holding-heart"></i>
+            <h3>Child-Centred Care</h3>
+            <p>
+              Each teacher is dedicated to the wellbeing and growth of every
+              individual child in their care.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <div class="location-section">
+      <div class="location-inner">
+        <div class="loc-text reveal-left">
+          <h2>Find Us in Taveta</h2>
+          <p>
+            We are proudly rooted in Taveta, a town at the foot of Mount
+            Kilimanjaro in the Taita-Taveta County of Kenya. Our school is part
+            of the local community fabric, and we take pride in serving the
+            families of this region.
+          </p>
+          <div class="loc-facts">
+            <div class="loc-fact">
+              <i class="fas fa-map-marker-alt"></i> P.O. BOX 75-80302, Taveta,
+              Kenya
+            </div>
+            <div class="loc-fact">
+              <i class="fas fa-phone"></i> +254 740 649 712 / +254 720 750 081
+            </div>
+            <div class="loc-fact">
+              <i class="fas fa-envelope"></i>
+              divinefavourjunioracademy@gmail.com
+            </div>
+            <div class="loc-fact">
+              <i class="fas fa-clock"></i> Mon–Fri: 7:00 AM – 5:00 PM · Sat:
+              7:00 AM – 2:00 PM
+            </div>
+          </div>
+        </div>
+        <div class="loc-map reveal-right">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.879455389362!2d37.667981173744614!3d-3.3796229414948162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1839b7004b8d364f%3A0xc187f581b8f4c959!2sDivine%20Favour%20Junior%20Academy!5e0!3m2!1sen!2ske!4v1767821520892!5m2!1sen!2ske"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-bottom" style="padding: 24px">
+        <p>
+          &copy; 2026 Divine Favour Junior Academy ·
+          <a
+            href="../index.html"
+            style="color: var(--gold-light); text-decoration: none"
+            >Back to Home</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.getElementById("navToggle");
+      const nav = document.getElementById("mainNav");
+      if (toggle)
+        toggle.addEventListener("click", () => nav.classList.toggle("open"));
+      const revEls = document.querySelectorAll(
+        ".reveal, .reveal-left, .reveal-right",
+      );
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              obs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      revEls.forEach((el) => obs.observe(el));
+    </script>
+  </body>
+</html>

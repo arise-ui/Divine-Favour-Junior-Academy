@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academics — Divine Favour Junior Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../index.css" />
+    <style>
+      .page-hero {
+        background: linear-gradient(135deg, #0c1e4a 0%, var(--navy) 100%);
+        padding: 100px 24px 80px;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        color: white;
+      }
+      .page-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(201, 168, 76, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(201, 168, 76, 0.05) 1px, transparent 1px);
+        background-size: 50px 50px;
+      }
+      .page-hero-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 700px;
+        margin: auto;
+      }
+      .breadcrumb {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 6px 18px;
+        border-radius: 50px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 24px;
+      }
+      .breadcrumb a {
+        color: var(--gold-light);
+        text-decoration: none;
+      }
+      .page-hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 50px;
+        font-weight: 800;
+        line-height: 1.15;
+        margin-bottom: 18px;
+      }
+      .page-hero h1 em {
+        color: var(--gold-light);
+        font-style: italic;
+      }
+      .page-hero p {
+        font-size: 17px;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.7;
+      }
+
+      /* Subject deep dives */
+      .subjects-section {
+        background: var(--cream);
+        padding: 90px 24px;
+      }
+      .subject-block {
+        max-width: 1100px;
+        margin: 0 auto 60px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .subject-block:last-child {
+        margin-bottom: 0;
+      }
+      .subject-block.reverse {
+        direction: rtl;
+      }
+      .subject-block.reverse > * {
+        direction: ltr;
+      }
+      .subject-visual {
+        background: linear-gradient(135deg, var(--navy), #1a2e6e);
+        border-radius: 20px;
+        aspect-ratio: 4/3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        text-align: center;
+        padding: 30px;
+      }
+      .subject-visual i {
+        font-size: 60px;
+        color: var(--gold);
+      }
+      .subject-visual h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 26px;
+        color: white;
+      }
+      .subject-visual span {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.65);
+      }
+      .subject-text .section-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--gold);
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+      }
+      .subject-text .section-label::before {
+        content: "";
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--gold);
+        border-radius: 2px;
+      }
+      .subject-text h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 32px;
+        color: var(--text-dark);
+        margin-bottom: 16px;
+      }
+      .subject-text p {
+        font-size: 15px;
+        color: var(--text-mid);
+        line-height: 1.8;
+        margin-bottom: 16px;
+      }
+      .subject-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 20px;
+      }
+      .subject-tag {
+        background: var(--navy);
+        color: white;
+        padding: 6px 16px;
+        border-radius: 50px;
+        font-size: 12.5px;
+        font-weight: 600;
+      }
+
+      /* Curriculum Strip */
+      .cbc-strip {
+        background: var(--navy);
+        padding: 80px 24px;
+        color: white;
+        text-align: center;
+      }
+      .cbc-strip h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 36px;
+        margin-bottom: 16px;
+      }
+      .cbc-strip p {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.75);
+        max-width: 700px;
+        margin: 0 auto 50px;
+        line-height: 1.75;
+      }
+      .cbc-pillars {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        max-width: 900px;
+        margin: auto;
+      }
+      .cbc-pillar {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        padding: 20px 24px;
+        border-radius: 14px;
+        text-align: center;
+        min-width: 160px;
+        transition: 0.3s ease;
+      }
+      .cbc-pillar:hover {
+        background: rgba(201, 168, 76, 0.12);
+        border-color: rgba(201, 168, 76, 0.3);
+      }
+      .cbc-pillar i {
+        font-size: 26px;
+        color: var(--gold);
+        margin-bottom: 10px;
+        display: block;
+      }
+      .cbc-pillar span {
+        font-size: 13.5px;
+        color: rgba(255, 255, 255, 0.85);
+        font-weight: 600;
+      }
+
+      /* Timetable hint */
+      .approach-section {
+        background: var(--white);
+        padding: 90px 24px;
+      }
+      .approach-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        max-width: 1000px;
+        margin: 56px auto 0;
+      }
+      .approach-card {
+        text-align: center;
+        padding: 32px 24px;
+        border-radius: 18px;
+        background: var(--cream);
+        transition: 0.3s ease;
+      }
+      .approach-card:hover {
+        background: var(--navy);
+      }
+      .approach-card i {
+        font-size: 36px;
+        color: var(--navy);
+        margin-bottom: 16px;
+        transition: 0.3s ease;
+      }
+      .approach-card:hover i {
+        color: var(--gold);
+      }
+      .approach-card h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 18px;
+        color: var(--text-dark);
+        margin-bottom: 10px;
+        transition: 0.3s ease;
+      }
+      .approach-card:hover h3 {
+        color: white;
+      }
+      .approach-card p {
+        font-size: 14px;
+        color: var(--text-light);
+        line-height: 1.65;
+        margin: 0;
+        transition: 0.3s ease;
+      }
+      .approach-card:hover p {
+        color: rgba(255, 255, 255, 0.75);
+      }
+
+      @media (max-width: 768px) {
+        .page-hero h1 {
+          font-size: 34px;
+        }
+        .subject-block {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+        .subject-block.reverse {
+          direction: ltr;
+        }
+        .approach-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="wa-float" href="https://wa.me/254720750081"
+      ><i class="fab fa-whatsapp"></i> Chat with us</a
+    >
+
+    <header class="navbar-section" id="navbar">
+      <nav class="navbar-container">
+        <a href="../index.html" class="navbar-logo">
+          <img
+            src="../images/logo.png"
+            alt="Logo"
+            onerror="this.style.display = 'none'"
+          />
+          <div class="logo-text">
+            Divine Favour Junior Academy<span class="logo-sub"
+              >Endeavour for Excellence</span
+            >
+          </div>
+        </a>
+        <ul class="navbar-nav" id="mainNav">
+          <li>
+            <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="academics.html" class="active">Academics</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="../index.html#Contact">Contact</a></li>
+        </ul>
+        <div class="navbar-toggle" id="navToggle">
+          <span></span><span></span><span></span>
+        </div>
+      </nav>
+    </header>
+
+    <div class="page-hero">
+      <div class="page-hero-inner">
+        <div class="breadcrumb">
+          <a href="../index.html">Home</a>
+          <i
+            class="fas fa-chevron-right"
+            style="font-size: 10px; opacity: 0.6"
+          ></i>
+          Academics
+        </div>
+        <h1>Our <em>Academic</em> Programme</h1>
+        <p>
+          A rich, broad, and balanced curriculum under the CBC framework —
+          building knowledge, skills, values, and attitudes in every learner.
+        </p>
+      </div>
+    </div>
+
+    <!-- SUBJECTS -->
+    <section class="subjects-section">
+      <div class="subject-block reveal">
+        <div class="subject-visual">
+          <i class="fas fa-book-open"></i>
+          <h3>Language Arts</h3>
+          <span>English &amp; Kiswahili</span>
+        </div>
+        <div class="subject-text">
+          <span class="section-label">Core Subject</span>
+          <h2>Language &amp; Literacy</h2>
+          <p>
+            From the first letters of the alphabet to confident essay writing,
+            our Language Arts programme builds strong readers, writers, and
+            communicators. We teach both English and Kiswahili with equal care
+            and depth.
+          </p>
+          <p>
+            Oral communication, creative writing, reading comprehension, and
+            grammar are all woven into an engaging, progressive curriculum
+            across all levels.
+          </p>
+          <div class="subject-tags">
+            <span class="subject-tag">Reading</span>
+            <span class="subject-tag">Writing</span>
+            <span class="subject-tag">Oral Skills</span>
+            <span class="subject-tag">Kiswahili</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="subject-block reverse reveal">
+        <div class="subject-visual">
+          <i class="fas fa-calculator"></i>
+          <h3>Mathematics</h3>
+          <span>Numbers · Logic · Problem Solving</span>
+        </div>
+        <div class="subject-text">
+          <span class="section-label">Core Subject</span>
+          <h2>Mathematics</h2>
+          <p>
+            We build a strong love of numbers from an early age. Our maths
+            programme takes learners from counting and shapes all the way
+            through algebra, data, and probability in JSS — always with an
+            emphasis on understanding over rote memorisation.
+          </p>
+          <p>
+            Practical maths activities, games, and real-world applications make
+            mathematics accessible and exciting for every learner.
+          </p>
+          <div class="subject-tags">
+            <span class="subject-tag">Numeracy</span>
+            <span class="subject-tag">Algebra</span>
+            <span class="subject-tag">Geometry</span>
+            <span class="subject-tag">Data Handling</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="subject-block reveal">
+        <div class="subject-visual">
+          <i class="fas fa-flask"></i>
+          <h3>Science &amp; Tech</h3>
+          <span>Inquiry · Discovery · Innovation</span>
+        </div>
+        <div class="subject-text">
+          <span class="section-label">Core Subject</span>
+          <h2>Science &amp; Technology</h2>
+          <p>
+            Our science programme is hands-on and inquiry-driven. Learners
+            observe, question, experiment, and discover — building a genuine
+            scientific mindset from a young age. We cover biology, chemistry,
+            physics, and applied technology concepts across the grade levels.
+          </p>
+          <p>
+            At JSS level, learners begin to explore integrated science with a
+            STEM focus, preparing them for senior school specialisation.
+          </p>
+          <div class="subject-tags">
+            <span class="subject-tag">Biology</span>
+            <span class="subject-tag">Physics</span>
+            <span class="subject-tag">Chemistry</span>
+            <span class="subject-tag">Technology</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="subject-block reverse reveal">
+        <div class="subject-visual">
+          <i class="fas fa-paint-brush"></i>
+          <h3>Creative Arts</h3>
+          <span>Music · Art · Drama · Crafts</span>
+        </div>
+        <div class="subject-text">
+          <span class="section-label">Enrichment</span>
+          <h2>Creative Arts &amp; Expression</h2>
+          <p>
+            We believe that creativity is as important as any core academic
+            subject. Our Creative Arts programme includes visual art, music,
+            drama, and crafts — giving every learner a space to express
+            themselves and discover their unique voice.
+          </p>
+          <p>
+            Arts education builds confidence, emotional intelligence, and
+            collaboration skills that benefit every area of a learner's
+            development and future life.
+          </p>
+          <div class="subject-tags">
+            <span class="subject-tag">Visual Art</span>
+            <span class="subject-tag">Music</span>
+            <span class="subject-tag">Drama</span>
+            <span class="subject-tag">Crafts</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CBC STRIP -->
+    <div class="cbc-strip">
+      <h2>Grounded in the CBC Curriculum</h2>
+      <p>
+        The Competency-Based Curriculum is designed to equip learners with the
+        knowledge, skills, values, and attitudes needed to thrive in a changing
+        world. At Divine Favour, we implement it with passion and precision.
+      </p>
+      <div class="cbc-pillars">
+        <div class="cbc-pillar">
+          <i class="fas fa-brain"></i><span>Critical Thinking</span>
+        </div>
+        <div class="cbc-pillar">
+          <i class="fas fa-users"></i><span>Collaboration</span>
+        </div>
+        <div class="cbc-pillar">
+          <i class="fas fa-lightbulb"></i><span>Creativity</span>
+        </div>
+        <div class="cbc-pillar">
+          <i class="fas fa-comments"></i><span>Communication</span>
+        </div>
+        <div class="cbc-pillar">
+          <i class="fas fa-heart"></i><span>Character</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- OUR APPROACH -->
+    <section class="approach-section">
+      <div class="container">
+        <div class="section-header reveal" style="text-align: center">
+          <span class="section-label">Our Pedagogy</span>
+          <h2 class="section-title">
+            How We <span class="highlight">Teach</span>
+          </h2>
+          <p class="section-subtitle" style="margin: 0 auto">
+            Our teaching philosophy puts the learner at the centre of every
+            lesson.
+          </p>
+        </div>
+        <div class="approach-grid">
+          <div class="approach-card reveal">
+            <i class="fas fa-hands-on"></i>
+            <h3>Hands-On Learning</h3>
+            <p>
+              Practical activities, experiments, and projects make abstract
+              concepts tangible and memorable.
+            </p>
+          </div>
+          <div class="approach-card reveal" style="transition-delay: 0.1s">
+            <i class="fas fa-child"></i>
+            <h3>Learner-Centred</h3>
+            <p>
+              We meet every child where they are, adapting our approach to
+              individual needs, pace, and learning styles.
+            </p>
+          </div>
+          <div class="approach-card reveal" style="transition-delay: 0.2s">
+            <i class="fas fa-trophy"></i>
+            <h3>Achievement-Focused</h3>
+            <p>
+              We celebrate every milestone — big and small — building confidence
+              alongside academic competence.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-bottom" style="padding: 24px">
+        <p>
+          &copy; 2026 Divine Favour Junior Academy ·
+          <a
+            href="../index.html"
+            style="color: var(--gold-light); text-decoration: none"
+            >Back to Home</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.getElementById("navToggle");
+      const nav = document.getElementById("mainNav");
+      if (toggle)
+        toggle.addEventListener("click", () => nav.classList.toggle("open"));
+      const revEls = document.querySelectorAll(
+        ".reveal, .reveal-left, .reveal-right",
+      );
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              obs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      revEls.forEach((el) => obs.observe(el));
+    </script>
+  </body>
+</html>

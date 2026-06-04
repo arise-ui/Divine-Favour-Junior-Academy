@@ -7,17 +7,17 @@
     <title>Divine Favour Junior Academy — Endeavour for Excellence</title>
     <meta
       name="description"
-      content="Divine Favour Junior Academy is a nurturing school in Taveta offering Pre-school, Primary, and Junior Secondary education under the CBC curriculum. We develop confident, curious, and competent learners."
+      content="Divine Favour Junior Academy is a nurturing school in Taveta offering Pre-school, Primary, and Junior Secondary education under the CBC curriculum."
     />
     <meta
-      name="tags"
+      name="keywords"
       content="Divine Favour Junior Academy, Taveta school, CBC, pre-school, primary, JSS, Kenya schools"
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -30,8 +30,7 @@
     <!-- WhatsApp Float -->
     <a
       class="wa-float"
-      href="https://wa.me/254720750081
-      "
+      href="https://wa.me/254720750081"
       title="Chat on WhatsApp"
     >
       <i class="fab fa-whatsapp"></i> Chat with us
@@ -57,13 +56,17 @@
     </div>
 
     <!-- ===== NAVBAR ===== -->
-    <header class="navbar-section">
+    <header class="navbar-section" id="navbar">
       <nav class="navbar-container">
         <a href="#home" class="navbar-logo">
-          <img src="images/logo.png" alt="Divine Favour Junior Academy Logo" />
+          <img
+            src="images/logo.png"
+            alt="Divine Favour Junior Academy Logo"
+            onerror="this.style.display = 'none'"
+          />
           <div class="logo-text">
             Divine Favour Junior Academy
-            <span>Endeavour for Excellence</span>
+            <span class="logo-sub">Endeavour for Excellence</span>
           </div>
         </a>
 
@@ -75,31 +78,49 @@
             <a href="#">About <i class="fas fa-chevron-down"></i></a>
             <ul class="sub-menu">
               <li><a href="#About">About Us</a></li>
-              <li><a href="#about-history">Our History</a></li>
-              <li><a href="#Gallery">Gallery</a></li>
+              <li><a href="#about-history">Our Values</a></li>
+              <li><a href="pages/about.html">Full About Page</a></li>
             </ul>
           </li>
           <li>
             <a href="#">Sections <i class="fas fa-chevron-down"></i></a>
             <ul class="sub-menu">
               <li class="has-children">
-                <a href="#">Pre-School</a>
+                <a href="#"
+                  >Pre-School
+                  <i
+                    class="fas fa-chevron-right"
+                    style="font-size: 10px; margin-left: auto"
+                  ></i
+                ></a>
                 <ul class="sub-menu">
-                  <li><a href="#sections">Pre-School Overview</a></li>
+                  <li><a href="#AboutCards">Pre-School Overview</a></li>
                   <li><a href="#Contact">Pre-School Admission</a></li>
                 </ul>
               </li>
               <li class="has-children">
-                <a href="#">Primary</a>
+                <a href="#"
+                  >Primary
+                  <i
+                    class="fas fa-chevron-right"
+                    style="font-size: 10px; margin-left: auto"
+                  ></i
+                ></a>
                 <ul class="sub-menu">
-                  <li><a href="#sections">Primary Overview</a></li>
+                  <li><a href="#AboutCards">Primary Overview</a></li>
                   <li><a href="#Contact">Primary Admission</a></li>
                 </ul>
               </li>
               <li class="has-children">
-                <a href="#">Junior Secondary (JSS)</a>
+                <a href="#"
+                  >Junior Secondary
+                  <i
+                    class="fas fa-chevron-right"
+                    style="font-size: 10px; margin-left: auto"
+                  ></i
+                ></a>
                 <ul class="sub-menu">
-                  <li><a href="#sections">JSS Overview</a></li>
+                  <li><a href="#AboutCards">JSS Overview</a></li>
                   <li><a href="#Contact">JSS Admission</a></li>
                 </ul>
               </li>
@@ -108,24 +129,24 @@
           <li>
             <a href="#">Academics <i class="fas fa-chevron-down"></i></a>
             <ul class="sub-menu">
-              <li><a href="#Academics">Overview</a></li>
+              <li><a href="pages/academics.html">Academics Overview</a></li>
               <li><a href="#Academics">Language Arts</a></li>
               <li><a href="#Academics">Mathematics</a></li>
-              <li><a href="#Academics">Science</a></li>
+              <li><a href="#Academics">Science & Tech</a></li>
               <li><a href="#Academics">Creative Arts</a></li>
             </ul>
           </li>
           <li>
             <a href="#">Admissions <i class="fas fa-chevron-down"></i></a>
             <ul class="sub-menu">
-              <li><a href="#Contact">How to Apply</a></li>
+              <li><a href="pages/admissions.html">How to Apply</a></li>
               <li><a href="#downloads">Fee Structure</a></li>
               <li><a href="#downloads">Academic Calendar</a></li>
               <li><a href="#News">Announcements</a></li>
             </ul>
           </li>
           <li><a href="#News">News</a></li>
-          <li><a href="#events">Events</a></li>
+          <li><a href="#school-life">School Life</a></li>
           <li><a href="#Contact">Contact</a></li>
         </ul>
 
@@ -137,21 +158,34 @@
 
     <!-- ===== HERO ===== -->
     <section id="home" class="hero-section">
-      <div class="hero-shapes"><span></span><span></span><span></span></div>
+      <div class="hero-bg-pattern"></div>
+      <div class="hero-grid-overlay"></div>
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+
       <div class="hero-container">
         <div class="hero-content">
-          <div class="hero-badge">CBC Curriculum · Taveta, Kenya</div>
-          <h1>Welcome to<br /><em>Divine Favour</em><br />Junior Academy</h1>
+          <div class="hero-eyebrow">
+            <span class="dot"></span>
+            CBC Curriculum &nbsp;·&nbsp; Taveta, Kenya
+          </div>
+          <h1>
+            Welcome to
+            <em>Divine Favour</em>
+            Junior Academy
+          </h1>
           <p>
             A nurturing school where every child is empowered to grow in
             confidence, curiosity, and character — from Pre-school through
             Junior Secondary.
           </p>
           <div class="hero-btns">
-            <a href="#AboutCards" class="btn-hero-primary"
-              ><i class="fas fa-graduation-cap"></i> Learn More About Us</a
-            >
-            <a href="#Contact" class="btn-hero-secondary">Admissions Enquiry</a>
+            <a href="#AboutCards" class="btn-primary">
+              <i class="fas fa-graduation-cap"></i> Explore Our School
+            </a>
+            <a href="pages/admissions.html" class="btn-outline">
+              <i class="fas fa-file-alt"></i> Admissions
+            </a>
           </div>
           <div class="hero-stats">
             <div class="hero-stat">
@@ -168,54 +202,110 @@
             </div>
           </div>
         </div>
+
+        <!-- Hero Right Panel -->
+        <div class="hero-visual">
+          <div class="hero-card-main">
+            <h3>What makes us different</h3>
+            <div class="hero-pill-list">
+              <div class="hero-pill">
+                <i class="fas fa-check-circle"></i> CBC-Aligned Learning
+              </div>
+              <div class="hero-pill">
+                <i class="fas fa-check-circle"></i> Holistic Development
+              </div>
+              <div class="hero-pill">
+                <i class="fas fa-check-circle"></i> Safe Environment
+              </div>
+              <div class="hero-pill">
+                <i class="fas fa-check-circle"></i> Character Formation
+              </div>
+              <div class="hero-pill">
+                <i class="fas fa-check-circle"></i> Passionate Teachers
+              </div>
+              <div class="hero-pill">
+                <i class="fas fa-check-circle"></i> PP1 – Grade 9
+              </div>
+            </div>
+          </div>
+          <div class="hero-cards-row">
+            <div class="hero-mini-card">
+              <i class="fas fa-child"></i>
+              <span>Pre-School</span>
+            </div>
+            <div class="hero-mini-card">
+              <i class="fas fa-school"></i>
+              <span>Primary</span>
+            </div>
+            <div class="hero-mini-card">
+              <i class="fas fa-user-graduate"></i>
+              <span>Junior Secondary</span>
+            </div>
+            <div class="hero-mini-card">
+              <i class="fas fa-star"></i>
+              <span>Excellence</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ===== WHAT WE OFFER ===== -->
     <section id="AboutCards" class="sections-area">
-      <div class="section-header">
-        <span class="section-label">Our Sections</span>
-        <h2 class="section-title">
-          What We <span class="highlight">Offer</span>
-        </h2>
-        <p class="section-subtitle">
-          From the very first steps to junior secondary, we walk every stage of
-          learning alongside your child.
-        </p>
-      </div>
-      <div class="sections-grid">
-        <div class="section-card">
-          <div class="card-icon"><i class="fas fa-child"></i></div>
-          <h3>Pre-School</h3>
-          <p>
-            We offer PP1 and PP2 with nurturing and play-based activities
-            designed to spark early curiosity and joy in learning.
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Our Sections</span>
+          <h2 class="section-title">
+            What We <span class="highlight">Offer</span>
+          </h2>
+          <p class="section-subtitle">
+            From the very first steps to junior secondary, we walk every stage
+            of learning alongside your child.
           </p>
-          <a href="#Contact" class="card-link"
-            >Learn more <i class="fas fa-arrow-right"></i
-          ></a>
         </div>
-        <div class="section-card">
-          <div class="card-icon"><i class="fas fa-school"></i></div>
-          <h3>Primary School</h3>
-          <p>
-            From Grade 1 through Grade 6, we build strong literacy, numeracy,
-            and social foundations under the CBC framework.
-          </p>
-          <a href="#Contact" class="card-link"
-            >Learn more <i class="fas fa-arrow-right"></i
-          ></a>
-        </div>
-        <div class="section-card">
-          <div class="card-icon"><i class="fas fa-user-graduate"></i></div>
-          <h3>Junior Secondary (JSS)</h3>
-          <p>
-            Grades 7–9 with a focus on competence, critical thinking, and
-            character development in preparation for senior school.
-          </p>
-          <a href="#Contact" class="card-link"
-            >Learn more <i class="fas fa-arrow-right"></i
-          ></a>
+        <div class="sections-grid">
+          <div class="section-card reveal">
+            <div class="card-top"></div>
+            <div class="card-body">
+              <div class="card-icon"><i class="fas fa-child"></i></div>
+              <h3>Pre-School</h3>
+              <p>
+                We offer PP1 and PP2 with nurturing and play-based activities
+                designed to spark early curiosity and joy in learning.
+              </p>
+              <a href="#Contact" class="card-link"
+                >Enquire Now <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="section-card reveal" style="transition-delay: 0.1s">
+            <div class="card-top"></div>
+            <div class="card-body">
+              <div class="card-icon"><i class="fas fa-school"></i></div>
+              <h3>Primary School</h3>
+              <p>
+                From Grade 1 through Grade 6, we build strong literacy,
+                numeracy, and social foundations under the CBC framework.
+              </p>
+              <a href="#Contact" class="card-link"
+                >Enquire Now <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="section-card reveal" style="transition-delay: 0.2s">
+            <div class="card-top"></div>
+            <div class="card-body">
+              <div class="card-icon"><i class="fas fa-user-graduate"></i></div>
+              <h3>Junior Secondary (JSS)</h3>
+              <p>
+                Grades 7–9 with a focus on competence, critical thinking, and
+                character development in preparation for senior school.
+              </p>
+              <a href="#Contact" class="card-link"
+                >Enquire Now <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -223,17 +313,25 @@
     <!-- ===== ABOUT US ===== -->
     <section id="About" class="about-section">
       <div class="container">
-        <span class="section-label">Who We Are</span>
-        <h2 class="section-title">
-          About <span class="highlight">Divine Favour Junior Academy</span>
-        </h2>
-        <p class="section-subtitle">
-          A community of learners, teachers, and families united by a shared
-          belief in the power of education to transform lives.
-        </p>
+        <div class="section-header reveal">
+          <span class="section-label">Who We Are</span>
+          <h2 class="section-title">
+            About
+            <span class="highlight">Divine Favour<br />Junior Academy</span>
+          </h2>
+          <p class="section-subtitle">
+            A community of learners, teachers, and families united by a shared
+            belief in the power of education to transform lives.
+          </p>
+        </div>
 
         <div class="about-grid">
-          <div class="about-text">
+          <div class="about-left-text reveal-left">
+            <p class="lead-para">
+              "Every learner who walks through our gates carries with them
+              unlimited potential — it is our honour and calling to help unlock
+              it."
+            </p>
             <p>
               Divine Favour Junior Academy is a dedicated learning institution
               located in Taveta, Kenya. We are committed to providing quality
@@ -249,52 +347,63 @@
             </p>
             <ul class="about-feature-list">
               <li>
-                <i class="fas fa-check-circle"></i> CBC-aligned curriculum from
-                PP1 to Grade 9
+                <i class="fas fa-check-circle"></i> CBC-aligned from PP1 to
+                Grade 9
               </li>
               <li>
-                <i class="fas fa-check-circle"></i> Experienced and dedicated
-                teaching staff
+                <i class="fas fa-check-circle"></i> Experienced teaching staff
               </li>
               <li>
-                <i class="fas fa-check-circle"></i> Safe, nurturing, and
-                inclusive school environment
+                <i class="fas fa-check-circle"></i> Safe, inclusive environment
               </li>
               <li>
-                <i class="fas fa-check-circle"></i> Strong focus on character
-                and values formation
+                <i class="fas fa-check-circle"></i> Strong values formation
               </li>
             </ul>
           </div>
-          <div class="about-cards-grid" id="about-history">
+
+          <div class="about-right reveal-right" id="about-history">
             <div class="about-mini-card">
-              <i class="fas fa-graduation-cap"></i>
-              <h3>Our Motto</h3>
-              <p>Endeavour for Excellence — in every class, every day.</p>
+              <div class="about-mini-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="about-mini-text">
+                <h3>Our Motto</h3>
+                <p>
+                  Endeavour for Excellence — in every class, every day, across
+                  every grade.
+                </p>
+              </div>
             </div>
             <div class="about-mini-card">
-              <i class="fas fa-bullseye"></i>
-              <h3>Our Mission</h3>
-              <p>
-                To provide a nurturing environment that develops confident,
-                curious, and competent learners.
-              </p>
+              <div class="about-mini-icon"><i class="fas fa-bullseye"></i></div>
+              <div class="about-mini-text">
+                <h3>Our Mission</h3>
+                <p>
+                  To provide a nurturing environment that develops confident,
+                  curious, and competent learners ready for the world.
+                </p>
+              </div>
             </div>
             <div class="about-mini-card">
-              <i class="fas fa-eye"></i>
-              <h3>Our Vision</h3>
-              <p>
-                To be a leading institution in academic excellence and holistic
-                child development.
-              </p>
+              <div class="about-mini-icon"><i class="fas fa-eye"></i></div>
+              <div class="about-mini-text">
+                <h3>Our Vision</h3>
+                <p>
+                  To be a leading institution in academic excellence and
+                  holistic child development in Kenya.
+                </p>
+              </div>
             </div>
             <div class="about-mini-card">
-              <i class="fas fa-heart"></i>
-              <h3>Our Values</h3>
-              <p>
-                Integrity, creativity, discipline, and love for learning at the
-                core of all we do.
-              </p>
+              <div class="about-mini-icon"><i class="fas fa-heart"></i></div>
+              <div class="about-mini-text">
+                <h3>Our Values</h3>
+                <p>
+                  Integrity, creativity, discipline, and love for learning are
+                  at the core of everything we do.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -304,7 +413,7 @@
     <!-- ===== MISSION / VISION STRIP ===== -->
     <div class="mv-strip">
       <div class="mv-grid">
-        <div class="mv-item">
+        <div class="mv-item reveal">
           <div class="mv-icon"><i class="fas fa-star"></i></div>
           <h3>Academic Excellence</h3>
           <p>
@@ -312,7 +421,7 @@
             they need to reach their full potential.
           </p>
         </div>
-        <div class="mv-item">
+        <div class="mv-item reveal" style="transition-delay: 0.15s">
           <div class="mv-icon"><i class="fas fa-hands-helping"></i></div>
           <h3>Holistic Development</h3>
           <p>
@@ -320,11 +429,11 @@
             emotionally, socially, and academically.
           </p>
         </div>
-        <div class="mv-item">
+        <div class="mv-item reveal" style="transition-delay: 0.3s">
           <div class="mv-icon"><i class="fas fa-seedling"></i></div>
           <h3>Character Formation</h3>
           <p>
-            We instill integrity, discipline, and resilience so our learners
+            We instil integrity, discipline, and resilience so our learners
             become responsible citizens of the future.
           </p>
         </div>
@@ -334,7 +443,7 @@
     <!-- ===== ACADEMICS ===== -->
     <section id="Academics" class="academics-area">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <span class="section-label">Curriculum</span>
           <h2 class="section-title">
             Our <span class="highlight">Academics</span>
@@ -342,10 +451,19 @@
           <p class="section-subtitle">
             A broad and balanced curriculum that develops well-rounded learners
             with the skills for the modern world.
+            <a
+              href="pages/academics.html"
+              style="
+                color: var(--navy);
+                font-weight: 700;
+                text-decoration: none;
+              "
+              >View Full Academics Page →</a
+            >
           </p>
         </div>
         <div class="academics-grid">
-          <div class="academic-card">
+          <div class="academic-card reveal">
             <i class="fas fa-book-open"></i>
             <h3>Language Arts</h3>
             <p>
@@ -353,14 +471,14 @@
               all levels.
             </p>
           </div>
-          <div class="academic-card">
+          <div class="academic-card reveal" style="transition-delay: 0.1s">
             <i class="fas fa-flask"></i>
             <h3>Science & Technology</h3>
             <p>
               Hands-on, inquiry-based learning to build STEM foundations early.
             </p>
           </div>
-          <div class="academic-card">
+          <div class="academic-card reveal" style="transition-delay: 0.2s">
             <i class="fas fa-calculator"></i>
             <h3>Mathematics</h3>
             <p>
@@ -368,7 +486,7 @@
               level.
             </p>
           </div>
-          <div class="academic-card">
+          <div class="academic-card reveal" style="transition-delay: 0.3s">
             <i class="fas fa-paint-brush"></i>
             <h3>Creative Arts</h3>
             <p>
@@ -380,41 +498,152 @@
       </div>
     </section>
 
-    <!-- ===== DIRECTOR'S MESSAGE ===== -->
+    <!-- ===== DIRECTORS' MESSAGES ===== -->
     <section class="message-area">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <span class="section-label">From Our Leadership</span>
           <h2 class="section-title">
-            A Word from the <span class="highlight">Director</span>
+            Words from Our <span class="gold">Directors</span>
           </h2>
+          <p class="section-subtitle">
+            Guidance and vision from the leadership that shapes the heart of
+            Divine Favour Junior Academy.
+          </p>
         </div>
-        <div class="message-inner" style="margin-top: 40px">
-          <div class="message-portrait">
-            <div class="portrait-placeholder">
-              <i class="fas fa-user-tie"></i>
+
+        <div class="directors-grid">
+          <!-- Director 1 -->
+          <div class="director-card reveal-left">
+            <div class="director-card-top">
+              <div class="director-portrait-area">
+                <div class="director-photo-wrap">
+                  <div class="director-photo-circle" id="dir1-circle">
+                    <img
+                      id="dir1-img"
+                      src=""
+                      alt="Director"
+                      style="display: none"
+                    />
+                    <i
+                      class="fas fa-user-tie placeholder-icon"
+                      id="dir1-icon"
+                    ></i>
+                  </div>
+                  <label
+                    class="photo-upload-hint"
+                    for="dir1-input"
+                    title="Upload photo"
+                  >
+                    <i class="fas fa-camera"></i>
+                  </label>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    id="dir1-input"
+                    class="director-photo-input"
+                  />
+                </div>
+                <div class="director-info">
+                  <h3>Damaris Shashu</h3>
+                  <div class="title">Founder &amp; Director</div>
+                </div>
+              </div>
+              <blockquote class="director-quote">
+                "Every child who walks through our doors carries a spark of
+                potential. Our role is to fan that flame into a lifelong love of
+                learning."
+              </blockquote>
             </div>
-            <h3>School Leadership</h3>
-            <span>Director<br />Divine Favour Junior Academy</span>
+            <div class="director-card-body">
+              <p>
+                Welcome to Divine Favour Junior Academy. We are a school that
+                believes deeply in the potential of every child. Our purpose is
+                not simply to deliver a curriculum — it is to create an
+                environment where learners feel safe, valued, and inspired to
+                grow.
+              </p>
+              <p>
+                From our dedicated classrooms in Taveta, we strive daily to
+                uphold our motto: <strong>Endeavour for Excellence</strong>. We
+                invite you to join our school family and shape the confident,
+                capable leaders of tomorrow.
+              </p>
+              <div class="director-sig">
+                <div>
+                  <div class="director-sig-name">Damaris Shashu</div>
+                  <div class="director-sig-role">
+                    Founder, Divine Favour Junior Academy
+                  </div>
+                </div>
+                <div class="sig-badge"><i class="fas fa-award"></i></div>
+              </div>
+            </div>
           </div>
-          <div class="message-content">
-            <blockquote>
-              "Every child who walks through our doors carries a spark of
-              potential. Our role is to fan that flame."
-            </blockquote>
-            <p>
-              Welcome to Divine Favour Junior Academy. We are a school that
-              believes deeply in the potential of every child. Our purpose is
-              not simply to deliver a curriculum — it is to create an
-              environment where learners feel safe, valued, and inspired to
-              grow.
-            </p>
-            <p>
-              From our dedicated classrooms in Taveta, we strive daily to uphold
-              our motto: <strong>Endeavour for Excellence</strong>. We invite
-              you to join our school family. Together, we can shape the
-              confident, capable leaders of tomorrow.
-            </p>
+
+          <!-- Director 2 / Deputy / Head Teacher slot -->
+          <div class="director-card reveal-right">
+            <div class="director-card-top">
+              <div class="director-portrait-area">
+                <div class="director-photo-wrap">
+                  <div class="director-photo-circle" id="dir2-circle">
+                    <img
+                      id="dir2-img"
+                      src=""
+                      alt="Billy Odago"
+                      style="display: none"
+                    />
+                    <i
+                      class="fas fa-chalkboard-teacher placeholder-icon"
+                      id="dir2-icon"
+                    ></i>
+                  </div>
+                  <label
+                    class="photo-upload-hint"
+                    for="dir2-input"
+                    title="Upload photo"
+                  >
+                    <i class="fas fa-camera"></i>
+                  </label>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    id="dir2-input"
+                    class="director-photo-input"
+                  />
+                </div>
+                <div class="director-info">
+                  <h3>Billy Odago</h3>
+                  <div class="title">Academic Director</div>
+                </div>
+              </div>
+              <blockquote class="director-quote">
+                "Excellence is not a destination — it is the daily habit we
+                build in every learner, one lesson at a time."
+              </blockquote>
+            </div>
+            <div class="director-card-body">
+              <p>
+                As the academic head of Divine Favour Junior Academy, my focus
+                is ensuring that every teacher is equipped, every lesson is
+                purposeful, and every child is seen. The CBC curriculum gives us
+                a wonderful framework to nurture real-world competencies.
+              </p>
+              <p>
+                We are constantly refining our approach, collaborating with
+                staff, and engaging parents — because we believe that education
+                is a shared responsibility and a shared joy.
+              </p>
+              <div class="director-sig">
+                <div>
+                  <div class="director-sig-name">Billy Odago</div>
+                  <div class="director-sig-role">
+                    Academic Director, Divine Favour Junior Academy
+                  </div>
+                </div>
+                <div class="sig-badge"><i class="fas fa-book-open"></i></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -423,14 +652,14 @@
     <!-- ===== NEWS ===== -->
     <section id="News" class="news-area">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <span class="section-label">Stay Updated</span>
           <h2 class="section-title">
-            Latest <span class="highlight">News & Announcements</span>
+            Latest <span class="highlight">News &amp; Announcements</span>
           </h2>
         </div>
         <div class="news-grid">
-          <div class="news-card">
+          <div class="news-card reveal-left">
             <div class="news-thumb">
               <img
                 src="images/adm.png"
@@ -446,14 +675,14 @@
                   display: none;
                   position: absolute;
                   inset: 0;
-                  background: linear-gradient(135deg, #1e3a8a, #2546c7);
+                  background: linear-gradient(135deg, #0f2554, #1e3a8a);
                   align-items: center;
                   justify-content: center;
                 "
               >
                 <i
                   class="fas fa-newspaper"
-                  style="font-size: 50px; color: rgba(255, 255, 255, 0.2)"
+                  style="font-size: 50px; color: rgba(255, 255, 255, 0.15)"
                 ></i>
               </div>
               <div class="news-tag-bar">
@@ -473,35 +702,33 @@
               </p>
             </div>
           </div>
-          <div class="news-card">
-            <div class="news-thumb">
-              <div
-                class="vid-placeholder"
-                style="
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  background: linear-gradient(135deg, #1e3a8a, #2546c7);
-                  aspect-ratio: 16/7;
-                "
-              >
-                <i
-                  class="fas fa-bullhorn"
-                  style="font-size: 50px; color: rgba(255, 255, 255, 0.2)"
-                ></i>
-              </div>
+          <div class="news-card reveal-right">
+            <div
+              class="news-thumb"
+              style="
+                background: linear-gradient(135deg, #0f2554, #1e3a8a);
+                aspect-ratio: 16/9;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <i
+                class="fas fa-bullhorn"
+                style="font-size: 50px; color: rgba(255, 255, 255, 0.15)"
+              ></i>
               <div class="news-tag-bar">
                 <span class="news-tag">General</span>
               </div>
             </div>
             <div class="news-body">
               <div class="news-meta">
-                <i class="far fa-calendar-alt"></i> Stay tuned for updates
+                <i class="far fa-calendar-alt"></i> Coming Soon
               </div>
-              <h3>More News Coming Soon</h3>
+              <h3>More News &amp; Updates Coming</h3>
               <p>
                 Follow our school page for the latest announcements, events, and
-                achievements. We're proud of what our learners accomplish every
+                achievements. We are proud of what our learners accomplish every
                 single term.
               </p>
             </div>
@@ -510,159 +737,140 @@
       </div>
     </section>
 
-    <!-- ===== EVENTS ===== -->
-    <section id="events" class="events-area">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">School Life</span>
-          <h2 class="section-title">
-            Events We've <span class="highlight">Celebrated</span>
+    <!-- ===== SCHOOL LIFE (Events + Gallery merged) ===== -->
+    <section id="school-life" class="school-life-area">
+      <div class="school-life-inner">
+        <div class="section-header reveal">
+          <span class="section-label" style="color: var(--gold)"
+            >School Life</span
+          >
+          <h2 class="section-title" style="color: white">
+            Life at <span class="gold">Divine Favour</span>
           </h2>
           <p class="section-subtitle">
-            A look at the memorable moments that make Divine Favour Junior
-            Academy a vibrant place to learn and grow.
+            Celebrations, talents, and memories that make our school a vibrant
+            place to learn and grow.
           </p>
         </div>
-        <div class="events-grid">
-          <div class="event-card">
-            <div class="event-video">
-              <video controls width="100%">
-                <source src="videos/event1.mp4" type="video/mp4" />
-              </video>
-              <div class="vid-placeholder">
-                <i class="fas fa-play-circle"></i>
-              </div>
-            </div>
-            <div class="event-body">
-              <h3>Talent Show</h3>
-              <p>
-                A special occasion that brought our school community together in
-                celebration and learning.
-              </p>
-            </div>
-          </div>
-          <div class="event-card">
-            <div class="event-video">
-              <video controls width="100%">
-                <source src="videos/event2.mp4" type="video/mp4" />
-              </video>
-              <div class="vid-placeholder">
-                <i class="fas fa-play-circle"></i>
-              </div>
-            </div>
-            <div class="event-body">
-              <h3>Talent Show</h3>
-              <p>
-                Learners showcased their talents, teamwork, and passion in this
-                unforgettable event.
-              </p>
-            </div>
-          </div>
-          <div class="event-card">
-            <div class="event-video">
-              <video controls width="100%">
-                <source src="videos/event3.mp4" type="video/mp4" />
-              </video>
-              <div class="vid-placeholder">
-                <i class="fas fa-play-circle"></i>
-              </div>
-            </div>
-            <div class="event-body">
-              <h3>Talent Show</h3>
-              <p>
-                A proud moment for our school family, celebrating achievement
-                and the joy of education.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ===== GALLERY ===== -->
-    <section id="Gallery" class="gallery-area">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Photo Gallery</span>
-          <h2 class="section-title">
-            Life at <span class="highlight">Divine Favour</span>
-          </h2>
-          <p class="section-subtitle">
-            Glimpses of the vibrant learning environment and community
-            activities at our school.
-          </p>
+        <!-- Tabs -->
+        <div class="life-tabs reveal">
+          <button
+            class="life-tab active"
+            onclick="switchTab(this, 'events-panel')"
+          >
+            <i class="fas fa-video"></i> Talent Show Highlights
+          </button>
+          <button class="life-tab" onclick="switchTab(this, 'gallery-panel')">
+            <i class="fas fa-images"></i> Photo Gallery
+          </button>
         </div>
-        <div class="gallery-grid">
-          <div class="gallery-card">
-            <img
-              src="images/juma.png"
-              alt="County Assembly Visit"
-              onerror="
-                this.style.display = 'none';
-                this.nextElementSibling.style.display = 'flex';
-              "
-            />
-            <div class="gallery-placeholder" style="display: none">
-              <i class="fas fa-image"></i>
+
+        <!-- Events Panel -->
+        <div class="life-panel active" id="events-panel">
+          <div class="event-showcase reveal">
+            <div class="event-showcase-header">
+              <div>
+                <h3>Talent Show — School Event</h3>
+                <p>
+                  Our learners showcased incredible talents, teamwork, and
+                  passion in this unforgettable celebration of creativity and
+                  school spirit.
+                </p>
+              </div>
+              <span class="event-badge"
+                ><i class="fas fa-star" style="margin-right: 5px"></i>School
+                Event</span
+              >
             </div>
-            <div class="gallery-caption">
-              <i
-                class="fas fa-map-marker-alt"
-                style="
-                  color: var(--main-blue);
-                  margin-right: 6px;
-                  font-size: 11px;
-                "
-              ></i
-              >County Assembly Visit
+            <div class="event-videos-grid">
+              <div class="event-video-item">
+                <video controls preload="metadata">
+                  <source src="videos/event1.mp4" type="video/mp4" />
+                </video>
+                <div class="vid-play-btn"><i class="fas fa-play"></i></div>
+                <div class="vid-overlay">
+                  <span><i class="fas fa-film"></i> Performance 1</span>
+                </div>
+              </div>
+              <div class="event-video-item">
+                <video controls preload="metadata">
+                  <source src="videos/event2.mp4" type="video/mp4" />
+                </video>
+                <div class="vid-play-btn"><i class="fas fa-play"></i></div>
+                <div class="vid-overlay">
+                  <span><i class="fas fa-film"></i> Performance 2</span>
+                </div>
+              </div>
+              <div class="event-video-item">
+                <video controls preload="metadata">
+                  <source src="videos/event3.mp4" type="video/mp4" />
+                </video>
+                <div class="vid-play-btn"><i class="fas fa-play"></i></div>
+                <div class="vid-overlay">
+                  <span><i class="fas fa-film"></i> Performance 3</span>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="gallery-card">
-            <img
-              src="images/lady.png"
-              alt="County Assembly Visit"
-              onerror="
-                this.style.display = 'none';
-                this.nextElementSibling.style.display = 'flex';
-              "
-            />
-            <div class="gallery-placeholder" style="display: none">
-              <i class="fas fa-image"></i>
-            </div>
-            <div class="gallery-caption">
-              <i
-                class="fas fa-map-marker-alt"
-                style="
-                  color: var(--main-blue);
-                  margin-right: 6px;
-                  font-size: 11px;
+        </div>
+
+        <!-- Gallery Panel -->
+        <div class="life-panel" id="gallery-panel">
+          <div class="gallery-grid reveal">
+            <div class="gallery-card">
+              <img
+                src="images/juma.png"
+                alt="County Assembly Visit"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'flex';
                 "
-              ></i
-              >County Assembly Visit
+              />
+              <div class="gallery-placeholder" style="display: none">
+                <i class="fas fa-image"></i>
+              </div>
+              <div class="gallery-overlay">
+                <span
+                  ><i class="fas fa-map-marker-alt"></i> County Assembly
+                  Visit</span
+                >
+              </div>
             </div>
-          </div>
-          <div class="gallery-card">
-            <img
-              src="images/students.png"
-              alt="Students"
-              onerror="
-                this.style.display = 'none';
-                this.nextElementSibling.style.display = 'flex';
-              "
-            />
-            <div class="gallery-placeholder" style="display: none">
-              <i class="fas fa-image"></i>
-            </div>
-            <div class="gallery-caption">
-              <i
-                class="fas fa-users"
-                style="
-                  color: var(--main-blue);
-                  margin-right: 6px;
-                  font-size: 11px;
+            <div class="gallery-card">
+              <img
+                src="images/lady.png"
+                alt="County Assembly Visit"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'flex';
                 "
-              ></i
-              >Our Learners
+              />
+              <div class="gallery-placeholder" style="display: none">
+                <i class="fas fa-image"></i>
+              </div>
+              <div class="gallery-overlay">
+                <span
+                  ><i class="fas fa-map-marker-alt"></i> County Assembly
+                  Visit</span
+                >
+              </div>
+            </div>
+            <div class="gallery-card">
+              <img
+                src="images/students.png"
+                alt="Students"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'flex';
+                "
+              />
+              <div class="gallery-placeholder" style="display: none">
+                <i class="fas fa-image"></i>
+              </div>
+              <div class="gallery-overlay">
+                <span><i class="fas fa-users"></i> Our Learners</span>
+              </div>
             </div>
           </div>
         </div>
@@ -672,32 +880,30 @@
     <!-- ===== DOWNLOADS ===== -->
     <section id="downloads" class="downloads-area">
       <div class="downloads-inner">
-        <div class="section-header">
+        <div class="section-header reveal">
           <span class="section-label">Resources</span>
           <h2 class="section-title">
             Downloads &amp; <span class="highlight">Documents</span>
           </h2>
         </div>
         <div class="downloads-grid">
-          <div class="download-item">
+          <div class="download-item reveal">
             <div class="dl-icon"><i class="fas fa-file-pdf"></i></div>
             <div class="dl-info">
               <h4>2026 Fee Structure</h4>
-              <span>PDF Document</span>
+              <span>PDF Document — All Sections</span>
             </div>
-            <a href="download/fee structure.pdf" target="_blank" class="dl-btn"
-              ><i class="fas fa-download"></i> Download</a
-            >
+            <a href="download/fee structure.pdf" target="_blank" class="dl-btn">
+              <i class="fas fa-download"></i> Download
+            </a>
           </div>
-          <div class="download-item">
+          <div class="download-item reveal" style="transition-delay: 0.1s">
             <div class="dl-icon"><i class="fas fa-calendar-alt"></i></div>
             <div class="dl-info">
               <h4>2026 Academic Calendar</h4>
               <span>Coming Soon</span>
             </div>
-            <span
-              class="dl-btn"
-              style="background: var(--text-light); cursor: default"
+            <span class="dl-btn" style="background: #9ca3af; cursor: default"
               >Pending</span
             >
           </div>
@@ -708,7 +914,7 @@
     <!-- ===== CONTACT ===== -->
     <section id="Contact" class="contact-area">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <span class="section-label">Get In Touch</span>
           <h2 class="section-title">
             Contact <span class="highlight">Us</span>
@@ -719,7 +925,7 @@
           </p>
         </div>
         <div class="contact-wrapper">
-          <div class="contact-card">
+          <div class="contact-card reveal-left">
             <h3>Contact Information</h3>
             <div class="contact-item">
               <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
@@ -751,18 +957,21 @@
                 </p>
               </div>
             </div>
-            <button class="contact-cta-btn">
-              <i class="fab fa-whatsapp"></i> WhatsApp Us
+            <button
+              class="contact-cta-btn"
+              onclick="window.open('https://wa.me/254720750081', '_blank')"
+            >
+              <i class="fab fa-whatsapp"></i> WhatsApp Us Now
             </button>
             <p class="trust-note">
               We respond to all enquiries within 24 hours.
             </p>
           </div>
 
-          <div class="map-card">
+          <div class="map-card reveal-right">
             <div class="map-header">
               <h3>Our Location</h3>
-              <p>Find us in Taveta — come visit us!</p>
+              <p>Find us in Taveta — come visit us anytime!</p>
             </div>
             <div class="map-embed">
               <iframe
@@ -770,7 +979,8 @@
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
+              >
+              </iframe>
             </div>
           </div>
         </div>
@@ -811,7 +1021,7 @@
                 <a href="#About"><i class="fas fa-angle-right"></i> About Us</a>
               </li>
               <li>
-                <a href="#sections"
+                <a href="#AboutCards"
                   ><i class="fas fa-angle-right"></i> School Sections</a
                 >
               </li>
@@ -821,8 +1031,8 @@
                 >
               </li>
               <li>
-                <a href="#Gallery"
-                  ><i class="fas fa-angle-right"></i> Gallery</a
+                <a href="#school-life"
+                  ><i class="fas fa-angle-right"></i> School Life</a
                 >
               </li>
               <li>
@@ -831,22 +1041,21 @@
             </ul>
           </div>
           <div class="footer-col">
-            <h4>Sections</h4>
+            <h4>Pages</h4>
             <ul>
               <li>
-                <a href="#AboutCards"
-                  ><i class="fas fa-angle-right"></i> Pre-School (PP1 & PP2)</a
+                <a href="about.html"
+                  ><i class="fas fa-angle-right"></i> Full About Page</a
                 >
               </li>
               <li>
-                <a href="#AboutCards"
-                  ><i class="fas fa-angle-right"></i> Primary (Gr 1–6)</a
+                <a href="academics.html"
+                  ><i class="fas fa-angle-right"></i> Academics</a
                 >
               </li>
               <li>
-                <a href="#AboutCards"
-                  ><i class="fas fa-angle-right"></i> Junior Secondary (Gr
-                  7–9)</a
+                <a href="admissions.html"
+                  ><i class="fas fa-angle-right"></i> Admissions</a
                 >
               </li>
               <li>
@@ -877,7 +1086,7 @@
               </li>
               <li>
                 <i class="fas fa-clock"></i> Mon–Fri: 7:00 AM – 5:00 PM<br /><span
-                  style="margin-left: 22px"
+                  style="margin-left: 20px"
                   >Sat: 7:00 AM – 2:00 PM</span
                 >
               </li>
@@ -892,6 +1101,7 @@
         </p>
       </div>
     </footer>
+
     <script src="script.js"></script>
   </body>
 </html>

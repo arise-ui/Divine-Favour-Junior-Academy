@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admissions — Divine Favour Junior Academy</title>
+    <meta
+      name="description"
+      content="Apply to Divine Favour Junior Academy. Learn about our admissions process for Pre-school, Primary, and Junior Secondary levels."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../index.css" />
+    <style>
+      /* Page-specific styles */
+      .page-hero {
+        background: linear-gradient(135deg, var(--navy) 0%, #1a2e6e 100%);
+        padding: 100px 24px 80px;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        color: white;
+      }
+      .page-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(201, 168, 76, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(201, 168, 76, 0.05) 1px, transparent 1px);
+        background-size: 50px 50px;
+      }
+      .page-hero-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 700px;
+        margin: auto;
+      }
+      .page-hero .breadcrumb {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 6px 18px;
+        border-radius: 50px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 24px;
+      }
+      .page-hero .breadcrumb a {
+        color: var(--gold-light);
+        text-decoration: none;
+      }
+      .page-hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 50px;
+        font-weight: 800;
+        line-height: 1.15;
+        margin-bottom: 18px;
+      }
+      .page-hero h1 em {
+        color: var(--gold-light);
+        font-style: italic;
+      }
+      .page-hero p {
+        font-size: 17px;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.7;
+      }
+
+      /* Process Steps */
+      .steps-section {
+        background: var(--cream);
+        padding: 90px 24px;
+      }
+      .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        max-width: 1100px;
+        margin: 56px auto 0;
+      }
+      .step-card {
+        background: var(--white);
+        border-radius: 18px;
+        padding: 32px 24px;
+        text-align: center;
+        box-shadow: var(--shadow-card);
+        border: 1px solid rgba(0, 0, 0, 0.04);
+        position: relative;
+        transition: 0.3s ease;
+      }
+      .step-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 40px rgba(15, 37, 84, 0.14);
+      }
+      .step-num {
+        width: 48px;
+        height: 48px;
+        background: var(--navy);
+        color: var(--gold);
+        border-radius: 50%;
+        font-family: "Playfair Display", serif;
+        font-size: 20px;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 18px;
+      }
+      .step-card h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: var(--text-dark);
+      }
+      .step-card p {
+        font-size: 14px;
+        color: var(--text-light);
+        line-height: 1.65;
+        margin: 0;
+      }
+
+      /* Levels */
+      .levels-section {
+        background: var(--white);
+        padding: 90px 24px;
+      }
+      .levels-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        max-width: 1100px;
+        margin: 56px auto 0;
+      }
+      .level-card {
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow-card);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        transition: 0.3s ease;
+      }
+      .level-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 50px rgba(15, 37, 84, 0.15);
+      }
+      .level-header {
+        background: linear-gradient(135deg, var(--navy), #1e3a8a);
+        padding: 30px 28px 26px;
+        text-align: center;
+      }
+      .level-header i {
+        font-size: 36px;
+        color: var(--gold);
+        margin-bottom: 14px;
+        display: block;
+      }
+      .level-header h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 22px;
+        color: white;
+        margin-bottom: 6px;
+      }
+      .level-header .grade {
+        font-size: 13px;
+        color: var(--gold-light);
+        font-weight: 600;
+      }
+      .level-body {
+        padding: 28px;
+        background: var(--cream);
+      }
+      .level-body ul {
+        list-style: none;
+        padding: 0;
+      }
+      .level-body ul li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 14px;
+        color: var(--text-mid);
+        margin-bottom: 12px;
+        line-height: 1.6;
+      }
+      .level-body ul li i {
+        color: var(--gold);
+        font-size: 13px;
+        margin-top: 2px;
+      }
+      .level-body .apply-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        background: var(--navy);
+        color: white;
+        padding: 13px;
+        border-radius: 9px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 14px;
+        transition: 0.3s ease;
+      }
+      .level-body .apply-btn:hover {
+        background: var(--gold);
+        color: var(--navy);
+      }
+
+      /* Requirements */
+      .req-section {
+        background: var(--cream);
+        padding: 90px 24px;
+      }
+      .req-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        max-width: 900px;
+        margin: 56px auto 0;
+      }
+      .req-card {
+        background: var(--white);
+        border-radius: 16px;
+        padding: 32px 30px;
+        box-shadow: var(--shadow-card);
+        border: 1px solid rgba(0, 0, 0, 0.04);
+      }
+      .req-card h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 20px;
+        color: var(--navy);
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .req-card h3 i {
+        color: var(--gold);
+        font-size: 18px;
+      }
+      .req-card ul {
+        list-style: none;
+        padding: 0;
+      }
+      .req-card ul li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 14px;
+        color: var(--text-mid);
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--cream);
+      }
+      .req-card ul li:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      .req-card ul li i {
+        color: var(--navy);
+        font-size: 12px;
+        margin-top: 3px;
+        flex-shrink: 0;
+      }
+
+      /* CTA Band */
+      .cta-band {
+        background: linear-gradient(135deg, var(--navy), #1a2e6e);
+        padding: 80px 24px;
+        text-align: center;
+        color: white;
+      }
+      .cta-band h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 38px;
+        margin-bottom: 16px;
+      }
+      .cta-band p {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.75);
+        max-width: 560px;
+        margin: 0 auto 36px;
+        line-height: 1.7;
+      }
+      .cta-btns {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 768px) {
+        .page-hero h1 {
+          font-size: 34px;
+        }
+        .steps-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .levels-grid {
+          grid-template-columns: 1fr;
+        }
+        .req-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 480px) {
+        .steps-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a
+      class="wa-float"
+      href="https://wa.me/254720750081"
+      title="Chat on WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i> Chat with us
+    </a>
+
+    <!-- NAVBAR -->
+    <header class="navbar-section" id="navbar">
+      <nav class="navbar-container">
+        <a href="../index.html" class="navbar-logo">
+          <img
+            src="../images/logo.png"
+            alt="Logo"
+            onerror="this.style.display = 'none'"
+          />
+          <div class="logo-text">
+            Divine Favour Junior Academy
+            <span class="logo-sub">Endeavour for Excellence</span>
+          </div>
+        </a>
+        <ul class="navbar-nav" id="mainNav">
+          <li>
+            <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="admissions.html" class="active">Admissions</a></li>
+          <li><a href="../index.html#Contact">Contact</a></li>
+        </ul>
+        <div class="navbar-toggle" id="navToggle">
+          <span></span><span></span><span></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <div class="page-hero-inner">
+        <div class="breadcrumb">
+          <a href="../index.html">Home</a>
+          <i
+            class="fas fa-chevron-right"
+            style="font-size: 10px; opacity: 0.6"
+          ></i>
+          Admissions
+        </div>
+        <h1>Join Our School <em>Family</em></h1>
+        <p>
+          We welcome learners from all backgrounds. Here's everything you need
+          to know about joining Divine Favour Junior Academy.
+        </p>
+      </div>
+    </div>
+
+    <!-- HOW TO APPLY -->
+    <section class="steps-section">
+      <div class="container">
+        <div class="section-header reveal" style="text-align: center">
+          <span class="section-label">The Process</span>
+          <h2 class="section-title">
+            How to <span class="highlight">Apply</span>
+          </h2>
+          <p class="section-subtitle" style="margin: 0 auto">
+            Our admissions process is simple, welcoming, and designed with
+            families in mind.
+          </p>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card reveal">
+            <div class="step-num">1</div>
+            <h3>Enquire</h3>
+            <p>
+              Contact us via phone, WhatsApp, or email to express interest and
+              get more details about the school.
+            </p>
+          </div>
+          <div class="step-card reveal" style="transition-delay: 0.1s">
+            <div class="step-num">2</div>
+            <h3>Visit Us</h3>
+            <p>
+              Schedule a visit to our campus in Taveta. Meet our teachers and
+              see our learning environment first-hand.
+            </p>
+          </div>
+          <div class="step-card reveal" style="transition-delay: 0.2s">
+            <div class="step-num">3</div>
+            <h3>Entry Interview</h3>
+            <p>
+              Learners undergo a brief, friendly entry assessment to help us
+              place them in the right class and provide the right support.
+            </p>
+          </div>
+          <div class="step-card reveal" style="transition-delay: 0.3s">
+            <div class="step-num">4</div>
+            <h3>Enrol &amp; Begin</h3>
+            <p>
+              Complete registration, pay the applicable fees, and welcome your
+              child to Divine Favour Junior Academy!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION LEVELS -->
+    <section class="levels-section">
+      <div class="container">
+        <div class="section-header reveal" style="text-align: center">
+          <span class="section-label">School Sections</span>
+          <h2 class="section-title">
+            Choose the Right <span class="highlight">Level</span>
+          </h2>
+        </div>
+        <div class="levels-grid">
+          <div class="level-card reveal-left">
+            <div class="level-header">
+              <i class="fas fa-child"></i>
+              <h3>Pre-School</h3>
+              <div class="grade">PP1 &amp; PP2</div>
+            </div>
+            <div class="level-body">
+              <ul>
+                <li>
+                  <i class="fas fa-check-circle"></i> Play-based, nurturing
+                  learning
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Early literacy &amp;
+                  numeracy
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Social &amp; emotional
+                  development
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Creative arts &amp; music
+                </li>
+                <li><i class="fas fa-check-circle"></i> Ages 4–6 typically</li>
+              </ul>
+              <a href="../index.html#Contact" class="apply-btn"
+                >Enquire for Pre-School</a
+              >
+            </div>
+          </div>
+          <div class="level-card reveal">
+            <div class="level-header">
+              <i class="fas fa-school"></i>
+              <h3>Primary School</h3>
+              <div class="grade">Grade 1 – Grade 6</div>
+            </div>
+            <div class="level-body">
+              <ul>
+                <li>
+                  <i class="fas fa-check-circle"></i> Full CBC curriculum
+                  delivery
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> English &amp; Kiswahili
+                  literacy
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Mathematics &amp; Science
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Social Studies &amp; CRE
+                </li>
+                <li><i class="fas fa-check-circle"></i> Ages 6–12 typically</li>
+              </ul>
+              <a href="../index.html#Contact" class="apply-btn"
+                >Enquire for Primary</a
+              >
+            </div>
+          </div>
+          <div class="level-card reveal-right">
+            <div class="level-header">
+              <i class="fas fa-user-graduate"></i>
+              <h3>Junior Secondary</h3>
+              <div class="grade">Grade 7 – Grade 9</div>
+            </div>
+            <div class="level-body">
+              <ul>
+                <li>
+                  <i class="fas fa-check-circle"></i> Competency-based JSS
+                  curriculum
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> STEM &amp; Humanities
+                  tracks
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Life skills &amp; career
+                  orientation
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Extracurricular activities
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Ages 12–15 typically
+                </li>
+              </ul>
+              <a href="../index.html#Contact" class="apply-btn"
+                >Enquire for JSS</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REQUIREMENTS -->
+    <section class="req-section">
+      <div class="container">
+        <div class="section-header reveal" style="text-align: center">
+          <span class="section-label">What to Bring</span>
+          <h2 class="section-title">
+            Admission <span class="highlight">Requirements</span>
+          </h2>
+        </div>
+        <div class="req-grid">
+          <div class="req-card reveal-left">
+            <h3><i class="fas fa-file-alt"></i> Documents Required</h3>
+            <ul>
+              <li>
+                <i class="fas fa-circle"></i> Birth certificate (original &amp;
+                copy)
+              </li>
+              <li>
+                <i class="fas fa-circle"></i> Previous school report (if
+                transferring)
+              </li>
+              <li>
+                <i class="fas fa-circle"></i> Immunisation / health records
+              </li>
+              <li><i class="fas fa-circle"></i> Passport-size photos (x2)</li>
+              <li><i class="fas fa-circle"></i> Parent/guardian national ID</li>
+            </ul>
+          </div>
+          <div class="req-card reveal-right">
+            <h3><i class="fas fa-info-circle"></i> Important Notes</h3>
+            <ul>
+              <li>
+                <i class="fas fa-circle"></i> Registration fees are payable at
+                enrolment
+              </li>
+              <li>
+                <i class="fas fa-circle"></i> Term fees are structured per
+                section — ask for our fee structure PDF
+              </li>
+              <li>
+                <i class="fas fa-circle"></i> Learners may join at any point in
+                the term subject to space
+              </li>
+              <li>
+                <i class="fas fa-circle"></i> We are inclusive and welcome
+                learners with special needs
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-band">
+      <h2>Ready to Take the First Step?</h2>
+      <p>
+        Contact us today to start the journey. Our team is happy to answer all
+        your questions and welcome you to our school family.
+      </p>
+      <div class="cta-btns">
+        <a
+          href="https://wa.me/254720750081"
+          target="_blank"
+          class="btn-primary"
+        >
+          <i class="fab fa-whatsapp"></i> WhatsApp Us
+        </a>
+        <a
+          href="../index.html#downloads"
+          class="btn-outline"
+          style="color: white; border-color: rgba(255, 255, 255, 0.35)"
+        >
+          <i class="fas fa-file-pdf"></i> Download Fee Structure
+        </a>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-bottom" style="padding: 24px">
+        <p>
+          &copy; 2026 Divine Favour Junior Academy ·
+          <a
+            href="../index.html"
+            style="color: var(--gold-light); text-decoration: none"
+            >Back to Home</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.getElementById("navToggle");
+      const nav = document.getElementById("mainNav");
+      if (toggle)
+        toggle.addEventListener("click", () => nav.classList.toggle("open"));
+
+      const revEls = document.querySelectorAll(
+        ".reveal, .reveal-left, .reveal-right",
+      );
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              obs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      revEls.forEach((el) => obs.observe(el));
+    </script>
+  </body>
+</html>
