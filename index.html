@@ -504,144 +504,128 @@
         <div class="section-header reveal">
           <span class="section-label">From Our Leadership</span>
           <h2 class="section-title">
-            Words from Our <span class="gold">Directors</span>
+            Word from the <span class="gold">Directors</span>
           </h2>
           <p class="section-subtitle">
-            Guidance and vision from the leadership that shapes the heart of
-            Divine Favour Junior Academy.
+            Guidance and vision from the two directors who own and shape the
+            heart of Divine Favour Junior Academy.
           </p>
         </div>
 
-        <div class="directors-grid">
-          <!-- Director 1 -->
-          <div class="director-card reveal-left">
-            <div class="director-card-top">
-              <div class="director-portrait-area">
-                <div class="director-photo-wrap">
-                  <div class="director-photo-circle" id="dir1-circle">
-                    <img
-                      id="dir1-img"
-                      src=""
-                      alt="Director"
-                      style="display: none"
-                    />
-                    <i
-                      class="fas fa-user-tie placeholder-icon"
-                      id="dir1-icon"
-                    ></i>
-                  </div>
-                  <label
-                    class="photo-upload-hint"
-                    for="dir1-input"
-                    title="Upload photo"
-                  >
-                    <i class="fas fa-camera"></i>
-                  </label>
-                  <input
-                    type="file"
-                    accept="image/*"
-                    id="dir1-input"
-                    class="director-photo-input"
-                  />
-                </div>
-                <div class="director-info">
-                  <h3>Damaris Shashu</h3>
-                  <div class="title">Founder &amp; Director</div>
+        <div class="directors-list">
+          <!-- ===== DIRECTOR 1 ===== -->
+          <div class="director-row reveal">
+            <!-- LEFT: Photo panel -->
+            <div class="director-photo-panel">
+              <div class="director-photo-slab-back"></div>
+              <div class="director-photo-frame">
+                <img
+                  src="images/director1.jpg"
+                  alt="School Director"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                />
+                <div class="director-photo-placeholder">
+                  <i class="fas fa-user-tie"></i>
+                  <span>Add photo: images/director1.jpg</span>
                 </div>
               </div>
-              <blockquote class="director-quote">
-                "Every child who walks through our doors carries a spark of
-                potential. Our role is to fan that flame into a lifelong love of
-                learning."
-              </blockquote>
+              <!-- Gold accent tag on the photo -->
+              <div class="director-photo-tag">
+                <i class="fas fa-award"></i> School Director
+              </div>
             </div>
-            <div class="director-card-body">
-              <p>
-                Welcome to Divine Favour Junior Academy. We are a school that
-                believes deeply in the potential of every child. Our purpose is
-                not simply to deliver a curriculum — it is to create an
-                environment where learners feel safe, valued, and inspired to
-                grow.
-              </p>
-              <p>
-                From our dedicated classrooms in Taveta, we strive daily to
-                uphold our motto: <strong>Endeavour for Excellence</strong>. We
-                invite you to join our school family and shape the confident,
-                capable leaders of tomorrow.
-              </p>
-              <div class="director-sig">
-                <div>
-                  <div class="director-sig-name">Damaris Shashu</div>
-                  <div class="director-sig-role">
-                    Founder, Divine Favour Junior Academy
-                  </div>
+
+            <!-- RIGHT: Text panel -->
+            <div class="director-text-panel">
+              <div class="director-text-inner">
+                <div class="director-name-block">
+                  <h3>School Director</h3>
+                  <span class="director-role-tag"
+                    >Divine Favour Junior Academy</span
+                  >
                 </div>
-                <div class="sig-badge"><i class="fas fa-award"></i></div>
+                <blockquote class="director-big-quote">
+                  "Every child who walks through our doors carries a spark of
+                  potential. Our role is to fan that flame into a lifelong love
+                  of learning."
+                </blockquote>
+                <p>
+                  Welcome to Divine Favour Junior Academy. We believe deeply in
+                  the potential of every child. Our purpose is not simply to
+                  deliver a curriculum — it is to create an environment where
+                  learners feel safe, valued, and inspired to grow.
+                </p>
+                <p>
+                  From our classrooms in Taveta, we strive daily to uphold our
+                  motto: <strong>Endeavour for Excellence</strong>. We invite
+                  you to join our school family and together shape the
+                  confident, capable leaders of tomorrow.
+                </p>
+                <div class="director-sig-row">
+                  <div class="director-sig-line"></div>
+                  <div class="director-sig-name-italic">School Director</div>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Director 2 / Deputy / Head Teacher slot -->
-          <div class="director-card reveal-right">
-            <div class="director-card-top">
-              <div class="director-portrait-area">
-                <div class="director-photo-wrap">
-                  <div class="director-photo-circle" id="dir2-circle">
-                    <img
-                      id="dir2-img"
-                      src=""
-                      alt="Billy Odago"
-                      style="display: none"
-                    />
-                    <i
-                      class="fas fa-chalkboard-teacher placeholder-icon"
-                      id="dir2-icon"
-                    ></i>
-                  </div>
-                  <label
-                    class="photo-upload-hint"
-                    for="dir2-input"
-                    title="Upload photo"
-                  >
-                    <i class="fas fa-camera"></i>
-                  </label>
-                  <input
-                    type="file"
-                    accept="image/*"
-                    id="dir2-input"
-                    class="director-photo-input"
-                  />
+          <!-- ===== DIRECTOR 2 (photo on right) ===== -->
+          <div class="director-row director-row-reverse reveal">
+            <!-- LEFT: Text panel -->
+            <div class="director-text-panel">
+              <div class="director-text-inner">
+                <div class="director-name-block">
+                  <h3>School Director</h3>
+                  <span class="director-role-tag">Co-Director</span>
                 </div>
-                <div class="director-info">
-                  <h3>Billy Odago</h3>
-                  <div class="title">Academic Director</div>
+                <blockquote class="director-big-quote">
+                  "Excellence is not a destination — it is the daily habit we
+                  build in every learner, one lesson at a time."
+                </blockquote>
+                <p>
+                  My vision is to create a learning environment where
+                  excellence, character, and innovation thrive. We are committed
+                  to providing quality education that empowers every child to
+                  discover their strengths, develop essential life skills, and
+                  achieve their full potential.
+                </p>
+
+                <p>
+                  At Divine Favour Junior Academy, we believe that education is
+                  a partnership, and together we are shaping the leaders,
+                  thinkers, and changemakers of tomorrow.
+                </p>
+                <div class="director-sig-row">
+                  <div class="director-sig-line"></div>
+                  <div class="director-sig-name-italic">School Director</div>
                 </div>
               </div>
-              <blockquote class="director-quote">
-                "Excellence is not a destination — it is the daily habit we
-                build in every learner, one lesson at a time."
-              </blockquote>
             </div>
-            <div class="director-card-body">
-              <p>
-                As the academic head of Divine Favour Junior Academy, my focus
-                is ensuring that every teacher is equipped, every lesson is
-                purposeful, and every child is seen. The CBC curriculum gives us
-                a wonderful framework to nurture real-world competencies.
-              </p>
-              <p>
-                We are constantly refining our approach, collaborating with
-                staff, and engaging parents — because we believe that education
-                is a shared responsibility and a shared joy.
-              </p>
-              <div class="director-sig">
-                <div>
-                  <div class="director-sig-name">Billy Odago</div>
-                  <div class="director-sig-role">
-                    Academic Director, Divine Favour Junior Academy
-                  </div>
+
+            <!-- RIGHT: Photo panel -->
+            <div class="director-photo-panel">
+              <div
+                class="director-photo-slab-back director-photo-slab-navy"
+              ></div>
+              <div class="director-photo-frame">
+                <img
+                  src="images/director2.jpg"
+                  alt="School Director"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                />
+                <div class="director-photo-placeholder">
+                  <i class="fas fa-chalkboard-teacher"></i>
+                  <span>Add photo: images/director2.jpg</span>
                 </div>
-                <div class="sig-badge"><i class="fas fa-book-open"></i></div>
+              </div>
+              <div class="director-photo-tag">
+                <i class="fas fa-award"></i> School Director
               </div>
             </div>
           </div>
@@ -1044,17 +1028,17 @@
             <h4>Pages</h4>
             <ul>
               <li>
-                <a href="about.html"
+                <a href="pages/about.html"
                   ><i class="fas fa-angle-right"></i> Full About Page</a
                 >
               </li>
               <li>
-                <a href="academics.html"
+                <a href="pages/academics.html"
                   ><i class="fas fa-angle-right"></i> Academics</a
                 >
               </li>
               <li>
-                <a href="admissions.html"
+                <a href="pages/admissions.html"
                   ><i class="fas fa-angle-right"></i> Admissions</a
                 >
               </li>

@@ -138,30 +138,9 @@ document.querySelectorAll(".event-video-item").forEach((item) => {
   }
 });
 
-// ===== DIRECTOR PHOTO UPLOAD =====
-function setupPhotoUpload(inputId, imgId, iconId) {
-  const input = document.getElementById(inputId);
-  const img = document.getElementById(imgId);
-  const icon = document.getElementById(iconId);
-
-  if (!input || !img || !icon) return;
-
-  input.addEventListener("change", (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = (evt) => {
-      img.src = evt.target.result;
-      img.style.display = "block";
-      icon.style.display = "none";
-    };
-    reader.readAsDataURL(file);
-  });
-}
-
-setupPhotoUpload("dir1-input", "dir1-img", "dir1-icon");
-setupPhotoUpload("dir2-input", "dir2-img", "dir2-icon");
+// Director photos are set directly in the HTML src attributes.
+// To add photos: save images to the images/ folder and update
+// src="images/director1.jpg" and src="images/director2.jpg" in index.html
 
 // ===== COUNTER ANIMATION (hero stats) =====
 function animateCounter(el, target, duration = 1500) {
